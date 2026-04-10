@@ -340,18 +340,40 @@
             margin: 0 auto;
         }
 
+        /* ===== FEATURE CARD - HOVER DARK STYLE ===== */
         .feature-card {
             padding: 30px 20px;
             border: 1px solid #eee;
             border-radius: 8px;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.4s ease;
             position: relative;
+            background: #fff;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a1628;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
         }
 
         .feature-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: transparent;
         }
 
         .feature-icon {
@@ -361,12 +383,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
         }
 
         .feature-icon i {
             font-size: 36px;
             color: #0a5dc2;
             opacity: 0.8;
+            transition: all 0.4s ease;
         }
 
         .feature-number {
@@ -376,6 +402,12 @@
             position: absolute;
             top: 10px;
             right: 15px;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .feature-card:hover .feature-number {
+            color: #fff;
         }
 
         .feature-card h4 {
@@ -385,12 +417,116 @@
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .feature-card:hover h4 {
+            color: #fff;
         }
 
         .feature-card p {
             font-size: 12px;
             color: #888;
             line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .feature-card:hover p {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .feature-card:hover .feature-icon i {
+            opacity: 1;
+            color: #4a9eff;
+        }
+
+        /* ===== SOLUTION CARD - HOVER DARK STYLE ===== */
+        .solution-card {
+            padding: 30px 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a1628;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .solution-card:hover::before {
+            opacity: 1;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: transparent;
+        }
+
+        .solution-card .sol-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .solution-card .sol-icon i {
+            font-size: 32px;
+            color: #0a5dc2;
+            transition: all 0.4s ease;
+        }
+
+        .solution-card:hover .sol-icon i {
+            color: #4a9eff;
+        }
+
+        .solution-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .solution-card:hover h4 {
+            color: #fff;
+        }
+
+        .solution-card p {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .solution-card:hover p {
+            color: rgba(255,255,255,0.6);
         }
 
         /* About Section */
@@ -622,46 +758,6 @@
             gap: 20px;
             max-width: 900px;
             margin: 0 auto;
-        }
-
-        .solution-card {
-            padding: 30px 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .solution-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transform: translateY(-3px);
-        }
-
-        .solution-card .sol-icon {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .solution-card .sol-icon i {
-            font-size: 32px;
-            color: #0a5dc2;
-        }
-
-        .solution-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-        }
-
-        .solution-card p {
-            font-size: 12px;
-            color: #888;
-            line-height: 1.6;
         }
 
         /* Projects Section */
@@ -1487,6 +1583,241 @@
             color: #4a8af4;
         }
 
+        /* ============================================ */
+        /* EXIT INTENT WHATSAPP MODAL                   */
+        /* ============================================ */
+        .exit-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .exit-modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .exit-modal {
+            background: #fff;
+            border-radius: 16px;
+            max-width: 520px;
+            width: 90%;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+
+        .exit-modal-header {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            padding: 30px 30px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exit-modal-header::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .exit-modal-header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .exit-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 2;
+        }
+
+        .exit-modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.7);
+        }
+
+        .exit-modal-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .exit-modal-icon i {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        .exit-modal-header h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .exit-modal-header p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+            position: relative;
+            z-index: 2;
+            line-height: 1.5;
+        }
+
+        .exit-modal-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .exit-modal-body .offer-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .exit-modal-body .offer-text strong {
+            color: #128C7E;
+            font-weight: 700;
+        }
+
+        .exit-benefits {
+            text-align: left;
+            margin-bottom: 25px;
+            background: #f0faf4;
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .exit-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #333;
+            padding: 6px 0;
+        }
+
+        .exit-benefits li i {
+            color: #25D366;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1fba59;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-whatsapp i {
+            font-size: 20px;
+        }
+
+        .exit-modal-footer {
+            padding: 0 30px 25px;
+            text-align: center;
+        }
+
+        .exit-modal-footer p {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .exit-modal-footer .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #25D366;
+            margin-right: 6px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .top-bar-left {
@@ -1570,6 +1901,22 @@
 
             .cctv-tabs {
                 flex-wrap: wrap;
+            }
+
+            .exit-modal {
+                margin: 20px;
+            }
+
+            .exit-modal-header {
+                padding: 25px 20px 20px;
+            }
+
+            .exit-modal-body {
+                padding: 25px 20px;
+            }
+
+            .exit-modal-footer {
+                padding: 0 20px 20px;
             }
         }
     </style>
@@ -2066,6 +2413,43 @@
         </div>
     </footer>
 
+    <!-- ====== EXIT INTENT WHATSAPP MODAL ====== -->
+    <div class="exit-modal-overlay" id="exitModal">
+        <div class="exit-modal">
+            <div class="exit-modal-header">
+                <button class="exit-modal-close" id="exitModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="exit-modal-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2>Ei, espere! ✋</h2>
+                <p>Não saia sem conhecer nosso <strong>orçamento exclusivo</strong> para você!</p>
+            </div>
+            <div class="exit-modal-body">
+                <p class="offer-text">
+                    Proteja sua família e seu patrimônio com a <strong>melhor tecnologia em segurança eletrônica</strong>. 
+                    Fale agora com nosso consultor e ganhe condições especiais! 🎉
+                </p>
+                <ul class="exit-benefits">
+                    <li><i class="fas fa-check-circle"></i> Orçamento 100% gratuito e sem compromisso</li>
+                    <li><i class="fas fa-check-circle"></i> Atendimento rápido pelo WhatsApp</li>
+                    <li><i class="fas fa-check-circle"></i> Desconto especial para novos clientes</li>
+                    <li><i class="fas fa-check-circle"></i> Suporte técnico 24 horas</li>
+                </ul>
+                <a href="https://wa.me/5517981859890?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20seguran%C3%A7a%20eletr%C3%B4nica.%20Podem%20me%20enviar%20um%20or%C3%A7amento%3F" 
+                   target="_blank" 
+                   class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Falar no WhatsApp Agora
+                </a>
+            </div>
+            <div class="exit-modal-footer">
+                <p><span class="pulse-dot"></span> Um consultor está online agora para te atender!</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
@@ -2123,6 +2507,51 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
+        });
+
+        // ============================================
+        // EXIT INTENT DETECTION
+        // ============================================
+        const exitModal = document.getElementById('exitModal');
+        const exitModalClose = document.getElementById('exitModalClose');
+        let exitIntentShown = false;
+
+        // Detect exit intent (mouse leaving viewport towards top)
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 10 && !exitIntentShown) {
+                exitIntentShown = true;
+                exitModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Also detect when user tries to close tab (for browsers that allow it)
+        window.addEventListener('beforeunload', (e) => {
+            if (!exitIntentShown) {
+                exitIntentShown = true;
+            }
+        });
+
+        // Close modal
+        exitModalClose.addEventListener('click', () => {
+            exitModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close modal on overlay click
+        exitModal.addEventListener('click', (e) => {
+            if (e.target === exitModal) {
+                exitModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && exitModal.classList.contains('active')) {
+                exitModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     </script>
 

@@ -3,1825 +3,1136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança Eletrônica</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Trend Segurança - Soluções Inteligentes em Monitoramento e CFTV</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* ============================================
+           VARIÁVEIS E RESET
+           ============================================ */
+        :root {
+            --color-primary: #0056e2;
+            --color-primary-dark: #003db3;
+            --color-secondary: #002d7a;
+            --color-text-dark: #0e1726;
+            --color-text-muted: #64748b;
+            --color-light-bg: #f8fafc;
+            --color-white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(14, 23, 38, 0.04);
+            --shadow-md: 0 10px 30px rgba(14, 23, 38, 0.06);
+            --shadow-lg: 0 20px 50px rgba(14, 23, 38, 0.12);
+            --radius-card: 10px;
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 24px;
         }
 
-        /* Top Bar */
-        .top-bar {
-            background: #0a5dc2;
-            color: #fff;
-            padding: 8px 0;
-            font-size: 12px;
-        }
-
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-left {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .top-bar-left a {
-            color: #fff;
-            font-size: 12px;
-        }
-
-        .top-bar-left a i {
-            margin-right: 5px;
-        }
-
-        .top-bar-right {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .top-bar-right a {
-            color: #fff;
-            font-size: 12px;
-        }
-
-        .top-bar-right .social-icons {
-            display: flex;
-            gap: 8px;
-            margin-left: 10px;
-        }
-
-        .top-bar-right .social-icons a {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            transition: background 0.3s;
-        }
-
-        .top-bar-right .social-icons a:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        /* Navigation */
-        .navbar {
-            background: #fff;
-            padding: 15px 0;
+        /* ============================================
+           HEADER
+           ============================================ */
+        .main-header {
+            background-color: var(--color-white);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
         }
 
-        .navbar .container {
+        .header-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            cursor: pointer;
         }
 
-        .logo h1 {
-            font-size: 22px;
-            font-weight: 900;
-            color: #0a5dc2;
-            letter-spacing: -1px;
-            line-height: 1.1;
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-text-dark);
+            letter-spacing: -0.5px;
         }
 
-        .logo-subtitle {
-            font-size: 9px;
-            color: #999;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-
-        .nav-menu {
+        .nav-menu ul {
             display: flex;
-            align-items: center;
-            gap: 25px;
+            list-style: none;
+            gap: 32px;
         }
 
         .nav-menu a {
-            font-size: 13px;
-            font-weight: 500;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
+            text-decoration: none;
+            color: var(--color-text-dark);
+            font-size: 0.938rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
         }
 
-        .nav-menu a:hover {
-            color: #0a5dc2;
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--color-primary);
         }
 
-        .nav-right {
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 24px;
         }
 
-        .nav-search {
-            cursor: pointer;
-            color: #555;
-            font-size: 14px;
-        }
-
-        .btn-orcamento {
-            background: #0a5dc2;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background 0.3s;
+        .search-btn {
+            background: none;
             border: none;
+            font-size: 1.1rem;
+            color: var(--color-text-dark);
             cursor: pointer;
+            transition: var(--transition-smooth);
         }
 
-        .btn-orcamento:hover {
-            background: #084a9e;
+        .search-btn:hover {
+            color: var(--color-primary);
         }
 
-        .hamburger {
+        .mobile-menu-toggle {
             display: none;
-            flex-direction: column;
-            gap: 5px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-text-dark);
             cursor: pointer;
         }
 
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: #333;
+        /* ============================================
+           BOTÕES GERAIS
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-size: 0.938rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: 2px solid transparent;
         }
 
-        /* Hero Section */
-        .hero {
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 86, 226, 0.3);
+        }
+
+        .btn-light {
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+        }
+
+        .btn-light:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .btn-light-solid {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        .btn-light-solid:hover {
+            background-color: var(--color-light-bg);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            background-color: transparent;
+            border-color: rgba(255, 255, 255, 0.4);
+            color: var(--color-white);
+        }
+
+        .btn-outline-light:hover {
+            border-color: var(--color-white);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ============================================
+           ELEMENTOS DE SEÇÃO
+           ============================================ */
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-tagline {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--color-text-dark);
+            line-height: 1.25;
+        }
+
+        .accent-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .accent-line.text-left {
+            justify-content: flex-start;
+        }
+
+        .accent-line span {
+            width: 50px;
+            height: 3px;
+            background-color: var(--color-primary);
             position: relative;
-            height: 600px;
+            display: block;
+        }
+
+        .accent-line span::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -2px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-primary);
+            transform: rotate(45deg);
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-white {
+            color: var(--color-white) !important;
+        }
+
+        .text-white-op {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .color-white-op {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero-section {
+            background: linear-gradient(to right, rgba(14, 23, 38, 0.92) 40%, rgba(14, 23, 38, 0.3) 100%),
+                        url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1800&q=80');
+            background-size: cover;
+            background-position: right center;
+            padding: 160px 0 200px 0;
+            position: relative;
+            color: var(--color-white);
+        }
+
+        .hero-content {
+            max-width: 580px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-curve {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-white);
+            border-radius: 40px 40px 0 0;
+        }
+
+        /* ============================================
+           FEATURES SECTION
+           ============================================ */
+        .features-section {
+            padding: 60px 0 100px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--color-white);
+            padding: 50px 40px;
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(14, 23, 38, 0.02);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-bg-number {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: rgba(14, 23, 38, 0.03);
+            line-height: 1;
+            user-select: none;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 30px;
+            color: var(--color-primary);
+            font-size: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            font-size: 0.938rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about-section {
+            padding: 100px 0;
+            background-color: var(--color-light-bg);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .highlight-p {
+            font-size: 0.938rem;
+            color: var(--color-text-muted);
+            margin: 25px 0;
+        }
+
+        .image-border-radius {
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .image-border-radius img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============================================
+           VIDEO SECTION
+           ============================================ */
+        .video-promo-section {
+            position: relative;
+            background-color: var(--color-secondary);
+        }
+
+        .video-banner-content {
+            padding: 100px 0 160px 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-thumb {
+            width: 100%;
+            display: block;
+        }
+
+        .play-trigger-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-white);
+            border-radius: 50%;
+            border: none;
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .play-trigger-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .dual-tabs-wrapper {
+            display: flex;
+            gap: 30px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 50;
+            padding-bottom: 80px;
+        }
+
+        .tab-card-floating {
+            flex: 1;
+            background-color: var(--color-white);
+            padding: 35px;
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .tab-icon-blue {
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+
+        .tab-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .tab-info a {
+            font-size: 0.875rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* ============================================
+           SOLUTIONS SECTION
+           ============================================ */
+        .industries-section {
+            padding: 100px 0;
+        }
+
+        .row-gap-4 {
+            row-gap: 40px;
+        }
+
+        .industry-box {
+            background-color: var(--color-white);
+            padding: 40px;
+            border-radius: var(--radius-card);
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(14, 23, 38, 0.02);
+            border: 1px solid rgba(14, 23, 38, 0.04);
+            transition: var(--transition-smooth);
+        }
+
+        .industry-box:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .ind-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 24px auto;
+            color: var(--color-primary);
+            font-size: 2rem;
+        }
+
+        .industry-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .industry-box p {
+            font-size: 0.938rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ============================================
+           MANAGEMENT TABS SECTION
+           ============================================ */
+        .management-tabs-section {
+            padding: 100px 0;
+            background-color: var(--color-light-bg);
+        }
+
+        .tabs-navigation-row {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-nav-btn {
+            padding: 16px 32px;
+            background-color: var(--color-white);
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-weight: 700;
+            color: var(--color-primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.938rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-nav-btn i {
+            font-size: 1.2rem;
+        }
+
+        .tab-nav-btn.active,
+        .tab-nav-btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 86, 226, 0.2);
+        }
+
+        .tab-content-panel {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tab-image-pane {
+            position: relative;
+        }
+
+        .play-button-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .play-button-overlay:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--color-primary-dark);
+        }
+
+        .play-button-overlay i {
+            color: var(--color-white);
+            font-size: 1.5rem;
+            margin-left: 5px;
+        }
+
+        .tab-text-pane h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--color-text-dark);
+        }
+
+        .tab-text-pane .body-text {
+            font-size: 0.938rem;
+            color: var(--color-text-muted);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .tab-text-pane h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--color-text-dark);
+        }
+
+        .bullet-blue-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .bullet-blue-list li {
+            font-size: 0.938rem;
+            color: var(--color-text-muted);
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 28px;
+            line-height: 1.6;
+        }
+
+        .bullet-blue-list li::before {
+            content: '•';
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -6px;
+            font-weight: bold;
+        }
+
+        /* ============================================
+           TEAM SECTION
+           ============================================ */
+        .team-section {
+            padding: 100px 0;
+            background-color: var(--color-light-bg);
+        }
+
+        .team-member-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            position: relative;
+        }
+
+        .image-inner {
+            aspect-ratio: 4 / 4;
             overflow: hidden;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .image-inner img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
-            background-color: #1a1a2e;
+            object-fit: cover;
+        }
+
+        .member-meta-box {
+            padding: 24px;
+            background-color: var(--color-white);
+            position: relative;
+            width: 85%;
+            margin: -30px auto 20px auto;
+            border-radius: 6px;
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+        }
+
+        .member-meta-box h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .member-meta-box span {
+            font-size: 0.844rem;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .dark-contact-wrapper {
+            background-color: #0b1325;
+            position: relative;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 550px;
+            position: relative;
+            padding: 60px 8%;
+            align-items: center;
+            background-image: linear-gradient(135deg, rgba(11, 19, 37, 0.88) 0%, rgba(6, 10, 19, 0.96) 100%),
+                              url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
         }
 
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            right: 5%;
-            top: 10%;
-            width: 500px;
-            height: 400px;
-            background: radial-gradient(ellipse, rgba(10,93,194,0.15) 0%, transparent 70%);
-        }
-
-        .hero-content {
+        .contact-left {
             position: relative;
-            z-index: 2;
             height: 100%;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
+            justify-content: center;
         }
 
-        .hero-text {
-            max-width: 550px;
-            color: #fff;
+        .vector-overlay {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 80%;
+            height: 80%;
+            border: 2px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            pointer-events: none;
         }
 
-        .hero-text h2 {
-            font-size: 36px;
+        .contact-right {
+            color: var(--color-white);
+            padding-left: 40px;
+            z-index: 2;
+        }
+
+        .contact-subtitle {
+            color: var(--color-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .contact-title {
+            font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.3;
-            margin-bottom: 15px;
-        }
-
-        .hero-text p {
-            font-size: 15px;
-            line-height: 1.6;
             margin-bottom: 25px;
-            opacity: 0.9;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: #fff;
-            color: #333;
-            padding: 12px 28px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background: #0a5dc2;
-            color: #fff;
-        }
-
-        .hero-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 5;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-
-        .hero-nav button {
-            width: 40px;
-            height: 40px;
-            border-radius: 4px;
-            border: none;
-            background: #0a5dc2;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .hero-nav button:hover {
-            background: #084a9e;
-        }
-
-        /* Why Choose */
-        .why-choose {
-            padding: 60px 0 40px;
-            text-align: center;
-        }
-
-        .section-label {
-            font-size: 12px;
-            color: #0a5dc2;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 15px;
-        }
-
-        .section-divider {
-            width: 40px;
-            height: 3px;
-            background: #0a5dc2;
-            margin: 0 auto 40px;
-            border-radius: 2px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* ===== FEATURE CARD - HOVER DARK STYLE ===== */
-        .feature-card {
-            padding: 30px 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            background: #fff;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a1628;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border-color: transparent;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            transition: all 0.4s ease;
-        }
-
-        .feature-icon i {
-            font-size: 36px;
-            color: #0a5dc2;
-            opacity: 0.8;
-            transition: all 0.4s ease;
-        }
-
-        .feature-number {
-            font-size: 36px;
-            font-weight: 800;
-            color: #e8edf2;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            z-index: 1;
-            transition: color 0.4s ease;
-        }
-
-        .feature-card:hover .feature-number {
-            color: #fff;
-        }
-
-        .feature-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-            transition: color 0.4s ease;
-        }
-
-        .feature-card:hover h4 {
-            color: #fff;
-        }
-
-        .feature-card p {
-            font-size: 12px;
-            color: #888;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-            transition: color 0.4s ease;
-        }
-
-        .feature-card:hover p {
-            color: rgba(255,255,255,0.6);
-        }
-
-        .feature-card:hover .feature-icon i {
-            opacity: 1;
-            color: #4a9eff;
-        }
-
-        /* ===== SOLUTION CARD - HOVER DARK STYLE ===== */
-        .solution-card {
-            padding: 30px 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            background: #fff;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .solution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a1628;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
-        }
-
-        .solution-card:hover::before {
-            opacity: 1;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border-color: transparent;
-        }
-
-        .solution-card .sol-icon {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            transition: all 0.4s ease;
-        }
-
-        .solution-card .sol-icon i {
-            font-size: 32px;
-            color: #0a5dc2;
-            transition: all 0.4s ease;
-        }
-
-        .solution-card:hover .sol-icon i {
-            color: #4a9eff;
-        }
-
-        .solution-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-            transition: color 0.4s ease;
-        }
-
-        .solution-card:hover h4 {
-            color: #fff;
-        }
-
-        .solution-card p {
-            font-size: 12px;
-            color: #888;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-            transition: color 0.4s ease;
-        }
-
-        .solution-card:hover p {
-            color: rgba(255,255,255,0.6);
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 60px 0;
-            background: #fff;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text .section-label {
-            text-align: left;
-        }
-
-        .about-text .section-title {
-            text-align: left;
-            font-size: 24px;
-        }
-
-        .about-text .section-divider {
-            margin: 0 0 20px;
-        }
-
-        .about-text p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .btn-blue {
-            display: inline-block;
-            background: #0a5dc2;
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-blue:hover {
-            background: #084a9e;
-        }
-
-        .about-image {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-image-placeholder {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-image-placeholder::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 150px;
-            border: 3px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .about-image-placeholder::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-radius: 8px;
-            top: 50%;
-            left: 35%;
-            transform: translate(-50%, -50%);
-        }
-
-        /* Solutions Banner */
-        .solutions-banner {
-            background: linear-gradient(135deg, #0a1628 0%, #1a2a4e 100%);
-            padding: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solutions-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-        }
-
-        .solutions-banner-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .solutions-banner-image {
-            width: 300px;
-            height: 120px;
-            background: linear-gradient(135deg, #2a3a5e 0%, #3a4a6e 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solutions-banner-image::before {
-            content: '';
-            width: 60px;
-            height: 60px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        .solutions-banner-image::after {
-            content: '▶';
-            color: #fff;
-            font-size: 20px;
-            position: absolute;
-            z-index: 2;
-        }
-
-        .solutions-banner-text {
-            color: #fff;
-        }
-
-        .solutions-banner-text .section-label {
-            color: #4a8af4;
-            text-align: left;
-        }
-
-        .solutions-banner-text h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .solutions-banner-text p {
-            font-size: 13px;
-            line-height: 1.6;
-            opacity: 0.7;
-        }
-
-        /* Solution Categories */
-        .solution-categories {
-            padding: 30px 0;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .category-card {
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 20px 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s;
-        }
-
-        .category-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .category-card i {
-            font-size: 28px;
-            color: #0a5dc2;
-        }
-
-        .category-card .cat-info h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 2px;
-        }
-
-        .category-card .cat-info a {
-            font-size: 12px;
-            color: #0a5dc2;
-            font-weight: 500;
-        }
-
-        /* Our Solutions Grid */
-        .our-solutions {
-            padding: 50px 0 60px;
-            text-align: center;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            background: linear-gradient(135deg, #0a5dc2 0%, #084a9e 100%);
-            padding: 50px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .projects-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-        }
-
-        .projects-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.03);
-        }
-
-        .projects-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            z-index: 2;
-        }
-
-        .projects-text {
-            color: #fff;
             max-width: 500px;
         }
 
-        .projects-text .section-label {
-            color: rgba(255,255,255,0.7);
-            text-align: left;
-        }
-
-        .projects-text h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .projects-text .section-divider {
-            margin: 0 0 15px;
-            background: #fff;
-        }
-
-        .projects-text p {
-            font-size: 13px;
-            line-height: 1.6;
-            opacity: 0.8;
-        }
-
-        .btn-white {
-            display: inline-block;
-            background: #fff;
-            color: #0a5dc2;
-            padding: 10px 25px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-white:hover {
-            background: #f0f0f0;
-        }
-
-        /* Image Carousel */
-        .image-carousel {
-            padding: 40px 0;
-        }
-
-        .carousel-track {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .carousel-item {
-            height: 200px;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .carousel-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .carousel-item:nth-child(1) .carousel-placeholder {
-            background: linear-gradient(135deg, #1a2a4e, #2a3a5e);
-        }
-
-        .carousel-item:nth-child(2) .carousel-placeholder {
-            background: linear-gradient(135deg, #2a3a5e, #3a4a6e);
-        }
-
-        .carousel-item:nth-child(3) .carousel-placeholder {
-            background: linear-gradient(135deg, #3a4a6e, #4a5a7e);
-        }
-
-        .carousel-item:nth-child(4) .carousel-placeholder {
-            background: linear-gradient(135deg, #1a2a4e, #2a3a5e);
-        }
-
-        .carousel-placeholder i {
-            font-size: 40px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .carousel-placeholder span {
-            font-size: 12px;
-            color: rgba(255,255,255,0.4);
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .carousel-dots span {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-        }
-
-        .carousel-dots span.active {
-            background: #0a5dc2;
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 50px 0 60px;
-            text-align: center;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .team-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        }
-
-        .team-photo {
-            height: 220px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .team-photo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .team-card:nth-child(1) .team-photo-placeholder {
-            background: linear-gradient(135deg, #2a3a5e, #1a2a4e);
-        }
-
-        .team-card:nth-child(2) .team-photo-placeholder {
-            background: linear-gradient(135deg, #3a4a6e, #2a3a5e);
-        }
-
-        .team-card:nth-child(3) .team-photo-placeholder {
-            background: linear-gradient(135deg, #1a3a5e, #0a2a4e);
-        }
-
-        .team-photo-placeholder .person-silhouette {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            position: relative;
-        }
-
-        .team-photo-placeholder .person-silhouette::before {
+        .contact-title::after {
             content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .team-photo-placeholder .person-silhouette::after {
-            content: '';
-            position: absolute;
+            display: block;
             width: 50px;
-            height: 30px;
-            border-radius: 25px 25px 0 0;
-            background: rgba(255,255,255,0.2);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .team-social-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.3);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .team-card:hover .team-social-overlay {
-            opacity: 1;
-        }
-
-        .team-social-overlay a {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 12px;
-        }
-
-        .team-info {
-            padding: 15px;
-            background: #fff;
-        }
-
-        .team-info h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 3px;
-        }
-
-        .team-info p {
-            font-size: 11px;
-            color: #0a5dc2;
-            font-weight: 500;
-        }
-
-        /* Smart Projects Section */
-        .smart-projects {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            overflow: hidden;
-        }
-
-        .smart-projects-image {
-            position: relative;
-            min-height: 400px;
-        }
-
-        .smart-projects-image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #2a3a5e, #1a2a4e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .smart-projects-image-placeholder .person-headset {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            position: relative;
-        }
-
-        .smart-projects-image-placeholder .person-headset::before {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .smart-projects-image-placeholder .person-headset::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 50px;
-            border-radius: 40px 40px 0 0;
-            background: rgba(255,255,255,0.15);
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .smart-projects-text {
-            background: linear-gradient(135deg, #0a1628 0%, #1a2a4e 100%);
-            padding: 50px 40px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .smart-projects-text .section-label {
-            color: #4a8af4;
-            text-align: left;
-        }
-
-        .smart-projects-text h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .smart-projects-text .section-divider {
-            margin: 0 0 15px;
-            background: #fff;
-        }
-
-        .smart-projects-text > p {
-            font-size: 13px;
-            line-height: 1.6;
-            opacity: 0.7;
-            margin-bottom: 25px;
-        }
-
-        .smart-features {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .smart-feature {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        .smart-feature-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(10, 93, 194, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .smart-feature-icon i {
-            color: #4a8af4;
-            font-size: 16px;
-        }
-
-        .smart-feature-text h5 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .smart-feature-text p {
-            font-size: 12px;
-            line-height: 1.5;
-            opacity: 0.6;
-        }
-
-        /* CCTV Management */
-        .cctv-management {
-            padding: 50px 0 60px;
-            text-align: center;
-        }
-
-        .cctv-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .cctv-tab {
-            padding: 12px 25px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #fff;
-        }
-
-        .cctv-tab i {
-            font-size: 16px;
-            color: #0a5dc2;
-        }
-
-        .cctv-tab.active {
-            background: #0a5dc2;
-            color: #fff;
-            border-color: #0a5dc2;
-        }
-
-        .cctv-tab.active i {
-            color: #fff;
-        }
-
-        .cctv-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .cctv-text h4 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-        }
-
-        .cctv-text p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .cctv-text h5 {
-            font-size: 14px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-        }
-
-        .cctv-text ul {
-            margin-bottom: 20px;
-        }
-
-        .cctv-text ul li {
-            font-size: 12px;
-            color: #666;
-            padding: 4px 0;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .cctv-text ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #0a5dc2;
-        }
-
-        .cctv-image {
-            border-radius: 8px;
-            overflow: hidden;
-            height: 250px;
-        }
-
-        .cctv-image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #e8edf2, #d0d5dc);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .cctv-image-placeholder .camera-icon {
-            width: 100px;
-            height: 60px;
-            background: rgba(0,0,0,0.1);
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .cctv-image-placeholder .camera-icon::before {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.15);
-            left: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* Contact Form Section */
-        .contact-section {
-            background: linear-gradient(135deg, #0a1628 0%, #1a2a4e 100%);
-            padding: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: rgba(10, 93, 194, 0.1);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-text {
-            color: #fff;
-        }
-
-        .contact-text .section-label {
-            color: rgba(255,255,255,0.6);
-            text-align: left;
-        }
-
-        .contact-text h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .contact-text .section-divider {
-            margin: 0 0 15px;
-            background: #fff;
+            height: 3px;
+            background-color: var(--color-primary);
+            margin-top: 15px;
         }
 
         .contact-form {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 30px;
-        }
-
-        .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 20px;
+            max-width: 550px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
+        .form-group.full-width {
+            grid-column: span 2;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 5px;
-        }
-
-        .form-group label span {
-            color: #ff6b6b;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-control {
             width: 100%;
-            padding: 10px 12px;
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 4px;
-            background: rgba(255,255,255,0.05);
-            color: #fff;
-            font-size: 13px;
-            font-family: 'Roboto', sans-serif;
-            transition: border-color 0.3s;
+            padding: 14px 16px;
+            color: var(--color-white);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-family: 'Inter', 'Poppins', sans-serif;
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.3);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-control:focus {
+            border-color: var(--color-primary);
+            background: rgba(255, 255, 255, 0.06);
             outline: none;
-            border-color: #0a5dc2;
         }
 
-        .form-group select {
+        select.form-control {
+            cursor: pointer;
             appearance: none;
-            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
         }
 
-        .form-group select option {
-            background: #1a2a4e;
-            color: #fff;
+        select.form-control option {
+            background-color: #0b1325;
+            color: var(--color-white);
         }
 
-        .form-group textarea {
-            height: 80px;
-            resize: none;
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
         }
 
-        .btn-contact {
-            background: #0a5dc2;
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background 0.3s;
+        .btn-submit {
+            grid-column: span 2;
+            justify-self: start;
+            background-color: var(--color-primary);
+            color: var(--color-white);
             border: none;
+            padding: 14px 35px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .btn-contact:hover {
-            background: #084a9e;
+        .btn-submit:hover {
+            background-color: #0052cc;
+            transform: translateY(-2px);
         }
 
-        /* Footer */
-        .footer {
-            background: #0a1628;
-            padding: 50px 0 20px;
-            color: #fff;
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background-color: #060a13;
+            color: var(--color-white);
+            position: relative;
+            padding-top: 80px;
+            margin-top: 100px;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .footer-grid {
+        .newsletter-wrapper {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 84%;
+            max-width: 1100px;
+            background: var(--color-white);
+            border-radius: 6px;
+            padding: 35px 50px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .newsletter-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .newsletter-text {
+            color: var(--color-text-dark);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .footer-content {
+            padding: 60px 8% 40px 8%;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .footer-brand h3 {
-            font-size: 22px;
-            font-weight: 900;
-            color: #fff;
-            letter-spacing: -1px;
-            margin-bottom: 5px;
-            line-height: 1.1;
+        .footer-brand .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-brand p {
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.8;
-            margin-bottom: 15px;
-            max-width: 300px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 8px;
-        }
-
-        .footer-social a {
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
-
-        .footer-social a:hover {
-            background: #0a5dc2;
-        }
-
-        .footer-links h4 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-            transition: color 0.3s;
-        }
-
-        .footer-links ul li a:hover {
-            color: #fff;
-        }
-
-        .footer-newsletter h4 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #fff;
-        }
-
-        .footer-newsletter p {
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 15px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            padding: 10px 12px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 4px;
-            background: transparent;
-            color: #fff;
-            font-size: 12px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255,255,255,0.3);
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: #0a5dc2;
-        }
-
-        .newsletter-form button {
-            background: #0a5dc2;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background: #084a9e;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            font-size: 12px;
-            color: rgba(255,255,255,0.4);
-        }
-
-        .footer-bottom a {
-            color: #4a8af4;
-        }
-
-        /* ============================================ */
-        /* EXIT INTENT WHATSAPP MODAL                   */
-        /* ============================================ */
-        .exit-modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            z-index: 99999;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(4px);
-            animation: fadeIn 0.4s ease;
-        }
-
-        .exit-modal-overlay.active {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .exit-modal {
-            background: #fff;
-            border-radius: 16px;
-            max-width: 520px;
-            width: 90%;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-            animation: slideUp 0.5s ease;
-            position: relative;
-        }
-
-        .exit-modal-header {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            padding: 30px 30px 25px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .exit-modal-header::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-        }
-
-        .exit-modal-header::after {
-            content: '';
-            position: absolute;
-            bottom: -40px;
-            left: -20px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-        }
-
-        .exit-modal-close {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.4);
-            background: rgba(255,255,255,0.15);
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            z-index: 2;
-        }
-
-        .exit-modal-close:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.7);
-        }
-
-        .exit-modal-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .exit-modal-icon i {
-            font-size: 36px;
-            color: #fff;
-        }
-
-        .exit-modal-header h2 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .exit-modal-header p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.85);
-            position: relative;
-            z-index: 2;
-            line-height: 1.5;
-        }
-
-        .exit-modal-body {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .exit-modal-body .offer-text {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .exit-modal-body .offer-text strong {
-            color: #128C7E;
-            font-weight: 700;
-        }
-
-        .exit-benefits {
-            text-align: left;
+            color: #a0aec0;
+            font-size: 0.85rem;
             margin-bottom: 25px;
-            background: #f0faf4;
-            border-radius: 10px;
-            padding: 18px 20px;
         }
 
-        .exit-benefits li {
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: #333;
-            padding: 6px 0;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            color: var(--color-white);
+            text-decoration: none;
         }
 
-        .exit-benefits li i {
-            color: #25D366;
-            font-size: 14px;
-            flex-shrink: 0;
+        .social-btn:hover {
+            background-color: var(--color-primary);
         }
 
-        .btn-whatsapp {
-            display: inline-flex;
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .footer-links-list {
+            list-style: none;
+        }
+
+        .footer-links-list li {
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+            color: #a0aec0;
+        }
+
+        .footer-form-group {
+            margin-bottom: 15px;
+        }
+
+        .footer-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            padding: 12px 15px;
+            color: var(--color-white);
+            font-size: 0.85rem;
+        }
+
+        .footer-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .btn-footer-submit {
+            width: 100%;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-footer-submit:hover {
+            background-color: #0052cc;
+        }
+
+        .copyright-bar {
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            background-color: #04070d;
+        }
+
+        /* ============================================
+           BOTÃO CÂMERA DE SEGURANÇA FLUTUANTE
+           ============================================ */
+        .camera-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            background: #25D366;
-            color: #fff;
-            padding: 16px 35px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-whatsapp:hover {
-            background: #1fba59;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-        }
-
-        .btn-whatsapp i {
-            font-size: 20px;
-        }
-
-        .exit-modal-footer {
-            padding: 0 30px 25px;
-            text-align: center;
-        }
-
-        .exit-modal-footer p {
-            font-size: 11px;
-            color: #999;
-        }
-
-        .exit-modal-footer .pulse-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-primary);
             border-radius: 50%;
-            background: #25D366;
-            margin-right: 6px;
-            animation: pulse 1.5s infinite;
+            box-shadow: 0 4px 20px rgba(0, 86, 226, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: cameraPulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.5); }
-            100% { opacity: 1; transform: scale(1); }
+        .camera-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 30px rgba(0, 86, 226, 0.6);
+            background-color: var(--color-primary-dark);
         }
 
-        /* Responsive */
+        .camera-float i {
+            color: #ffffff;
+            font-size: 28px;
+        }
+
+        /* Tooltip da Câmera */
+        .camera-tooltip {
+            position: absolute;
+            right: 75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .camera-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-white);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .camera-float:hover .camera-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 80px;
+        }
+
+        /* Animação de pulso */
+        @keyframes cameraPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 226, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(0, 86, 226, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 226, 0);
+            }
+        }
+
+        /* ============================================
+           RESPONSIVO
+           ============================================ */
+        @media (max-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-title {
+                font-size: 2.75rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .top-bar-left {
-                display: none;
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
             }
 
             .nav-menu {
@@ -1830,729 +1141,700 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: #fff;
-                flex-direction: column;
+                background-color: var(--color-white);
                 padding: 20px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                box-shadow: var(--shadow-md);
             }
 
-            .nav-menu.active {
-                display: flex;
+            .nav-menu.open {
+                display: block;
             }
 
-            .hamburger {
-                display: flex;
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 16px;
             }
 
-            .hero {
-                height: 400px;
+            .header-actions {
+                display: none;
             }
 
-            .hero-text h2 {
+            .dual-tabs-wrapper {
+                flex-direction: column;
+                margin-top: -40px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-left {
+                display: none;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .btn-submit {
+                grid-column: span 1;
+                width: 100%;
+            }
+
+            .tabs-navigation-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .tab-nav-btn {
+                justify-content: center;
+            }
+
+            .newsletter-inner {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            footer {
+                margin-top: 140px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            /* Câmera Mobile */
+            .camera-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .camera-float i {
                 font-size: 24px;
             }
 
-            .features-grid,
-            .solutions-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid,
-            .contact-content,
-            .smart-projects,
-            .cctv-content {
-                grid-template-columns: 1fr;
-            }
-
-            .solutions-banner-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .solutions-banner-text .section-label {
-                text-align: center;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .carousel-track {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .projects-text .section-label {
-                text-align: center;
-            }
-
-            .cctv-tabs {
-                flex-wrap: wrap;
-            }
-
-            .exit-modal {
-                margin: 20px;
-            }
-
-            .exit-modal-header {
-                padding: 25px 20px 20px;
-            }
-
-            .exit-modal-body {
-                padding: 25px 20px;
-            }
-
-            .exit-modal-footer {
-                padding: 0 20px 20px;
+            .camera-tooltip {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-left">
-                <a href="tel:+5511997037626"><i class="fas fa-phone"></i> Fale conosco (11) 99703-7626</a>
-                <a href="mailto:contato@segurancaeletronica.com.br"><i class="fas fa-envelope"></i> contato@segurancaeletronica.com.br</a>
-            </div>
-            <div class="top-bar-right">
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- ============================================
+         BOTÃO CÂMERA DE SEGURANÇA FLUTUANTE
+         ============================================ -->
+    <a href="#contato" 
+       class="camera-float" 
+       aria-label="Solicite um orçamento">
+        <i class="fas fa-video"></i>
+        <span class="camera-tooltip">Solicite um orçamento!</span>
+    </a>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="main-header">
+        <div class="container header-container">
             <div class="logo">
-                <div>
-                    <h1>SEGURANÇA ELETRÔNICA</h1>
-                    <div class="logo-subtitle">Soluções Completas em Segurança</div>
-                </div>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4H20C24.4183 4 28 7.58172 28 12C28 16.4183 24.4183 20 20 20H12V28H6V4Z" fill="#0056e2"/>
+                    <path d="M12 10H18C19.1046 10 20 10.8954 20 12C20 13.1046 19.1046 14 18 14H12V10Z" fill="#ffffff"/>
+                    <path d="M6 16H14V20H6V16Z" fill="#002d7a"/>
+                </svg>
+                <span class="logo-text">Trend Segurança</span>
             </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="#">Home</a>
-                <a href="#">Sobre nós</a>
-                <a href="#">Soluções</a>
-                <a href="#">Vantagens</a>
-                <a href="#">Contato</a>
-            </div>
-            <div class="nav-right">
-                <span class="nav-search"><i class="fas fa-search"></i></span>
-                <button class="btn-orcamento">Solicitar Orçamento</button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h2>Segurança Inteligente para Proteger o que Realmente Importa.</h2>
-                <p>Soluções completas em segurança eletrônica para residências, empresas e condomínios.</p>
-                <button class="btn-primary">Fale Conosco</button>
+            <button class="mobile-menu-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Soluções</a></li>
+                    <li><a href="#">Vantagens</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="search-btn" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="#" class="btn btn-primary">Solicitar Orçamento</a>
             </div>
         </div>
-        <div class="hero-nav">
-            <button><i class="fas fa-chevron-left"></i></button>
-            <button><i class="fas fa-chevron-right"></i></button>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Segurança Inteligente para Proteger o que Realmente Importa.</h1>
+                <p class="hero-subtitle">Soluções completas em segurança eletrônica para residências, empresas e condomínios.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-light">Fale Conosco</a>
+                </div>
+            </div>
         </div>
+        <div class="hero-curve"></div>
     </section>
 
-    <!-- Why Choose -->
-    <section class="why-choose">
+    <!-- ============================================
+         FEATURES - POR QUE ESCOLHER A TREND SEGURANÇA
+         ============================================ -->
+    <section class="features-section">
         <div class="container">
-            <div class="section-label">Tecnologia</div>
-            <h2 class="section-title">Por que escolher a Segurança Eletrônica</h2>
-            <div class="section-divider"></div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-house-chimney-window"></i>
-                    </div>
-                    <span class="feature-number">01</span>
-                    <h4>Monitoramento 24/7</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            <div class="section-header">
+                <span class="section-tagline">Tecnologia</span>
+                <h2 class="section-title">Por que escolher a Trend Segurança</h2>
+                <div class="accent-line">
+                    <span></span>
                 </div>
+            </div>
+
+            <div class="grid-3">
                 <div class="feature-card">
-                    <div class="feature-icon">
+                    <div class="card-bg-number">01</div>
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="card-title">Monitoramento 24/7</h3>
+                    <p class="card-text">O que é vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-bg-number">02</div>
+                    <div class="card-icon">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <span class="feature-number">02</span>
-                    <h4>Tecnologia Avançada</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <h3 class="card-title">Tecnologia Avançada</h3>
+                    <p class="card-text">O que é vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-fingerprint"></i>
-                    </div>
-                    <span class="feature-number">03</span>
-                    <h4>Controle de Acesso</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <div class="section-label">Sobre nós</div>
-                    <h2 class="section-title">Experiência e Confiança</h2>
-                    <div class="section-divider"></div>
-                    <p>Somos uma empresa especializada em segurança eletrônica, oferecendo soluções completas para residências, empresas e condomínios. Com anos de experiência no mercado, garantimos a proteção que você precisa com tecnologia de ponta.</p>
-                    <p>Nossa equipe de profissionais qualificados está pronta para atender suas necessidades, desde o projeto até a instalação e manutenção dos sistemas de segurança.</p>
-                    <button class="btn-blue">Saiba mais</button>
-                </div>
-                <div class="about-image">
-                    <div class="about-image-placeholder"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions Banner -->
-    <section class="solutions-banner">
-        <div class="container">
-            <div class="solutions-banner-content">
-                <div class="solutions-banner-image"></div>
-                <div class="solutions-banner-text">
-                    <div class="section-label">Sobre nós</div>
-                    <h3>Nossas soluções em segurança</h3>
-                    <p>The professional approach to security. Teachings of the great master-builder of human happiness.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Categories -->
-    <section class="solution-categories">
-        <div class="container">
-            <div class="categories-grid">
-                <div class="category-card">
-                    <i class="fas fa-building"></i>
-                    <div class="cat-info">
-                        <h4>CFTV Comercial</h4>
-                        <a href="#">Ver mais <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <i class="fas fa-home"></i>
-                    <div class="cat-info">
-                        <h4>CFTV Residencial</h4>
-                        <a href="#">Ver mais <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Solutions -->
-    <section class="our-solutions">
-        <div class="container">
-            <div class="section-label">Soluções</div>
-            <h2 class="section-title">Nossas Soluções em Segurança</h2>
-            <div class="section-divider"></div>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <div class="sol-icon">
-                        <i class="fas fa-house-chimney-window"></i>
-                    </div>
-                    <h4>Monitoramento</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h4>Manutenção</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h4>Portaria remota</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h4>CFTV</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h4>Alarmes</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="sol-icon">
+                    <div class="card-bg-number">03</div>
+                    <div class="card-icon">
                         <i class="fas fa-id-card"></i>
                     </div>
-                    <h4>Controle de acesso</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <h3 class="card-title">Controle de Acesso</h3>
+                    <p class="card-text">O que é vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects-section">
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section class="about-section">
         <div class="container">
-            <div class="projects-content">
-                <div class="projects-text">
-                    <div class="section-label">Projetos</div>
-                    <h3>Projetos e Soluções Aplicadas</h3>
-                    <div class="section-divider"></div>
-                    <p>The professional approach to security. Teachings of the great master-builder of human happiness.</p>
+            <div class="grid-2">
+                <div class="about-text-content">
+                    <span class="section-tagline">Sobre nós</span>
+                    <h2 class="section-title text-left">Experiência e Confiança</h2>
+                    <div class="accent-line text-left">
+                        <span></span>
+                    </div>
+
+                    <p class="highlight-p">We are a leader in endpoint protection solutions by industry analysts, independent testing organizations and security professionals. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+
+                    <a href="#" class="btn btn-primary mt-4">Saiba mais</a>
                 </div>
-                <button class="btn-white">Saiba mais</button>
+                <div class="about-image-wrapper">
+                    <div class="image-border-radius">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Painel de Automação">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Image Carousel -->
-    <section class="image-carousel">
+    <!-- ============================================
+         VIDEO SECTION
+         ============================================ -->
+    <section class="video-promo-section">
+        <div class="video-banner-content">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="video-wrapper">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" alt="Prévia CFTV" class="video-thumb">
+                        <button class="play-trigger-btn" aria-label="Assistir Vídeo">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="video-text-wrapper">
+                        <span class="section-tagline color-white-op">Sobre nós</span>
+                        <h2 class="section-title text-left text-white">Nossas soluções em segurança</h2>
+                        <div class="accent-line text-left">
+                            <span></span>
+                        </div>
+                        <p class="text-white-op mb-4">The professional approach to security. Teachings of the great master-builder of human happiness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
-            <div class="carousel-track">
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">
+            <div class="dual-tabs-wrapper">
+                <div class="tab-card-floating">
+                    <div class="tab-icon-blue">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="tab-info">
+                        <h3>CFTV Comercial</h3>
+                        <a href="#">Ver mais</a>
+                    </div>
+                </div>
+                <div class="tab-card-floating">
+                    <div class="tab-icon-blue">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="tab-info">
+                        <h3>CFTV Residencial</h3>
+                        <a href="#">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SOLUTIONS SECTION
+         ============================================ -->
+    <section class="industries-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Soluções</span>
+                <h2 class="section-title">Nossas Soluções em Segurança</h2>
+                <div class="accent-line">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="grid-3 row-gap-4">
+                <div class="industry-box">
+                    <div class="ind-icon">
                         <i class="fas fa-video"></i>
-                        <span>Câmera WiFi</span>
                     </div>
+                    <h3>Monitoramento</h3>
+                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
                 </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">
-                        <i class="fas fa-camera"></i>
-                        <span>Câmera Dome</span>
+                <div class="industry-box">
+                    <div class="ind-icon">
+                        <i class="fas fa-tools"></i>
                     </div>
+                    <h3>Manutenção</h3>
+                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
                 </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Painel de Controle</span>
+                <div class="industry-box">
+                    <div class="ind-icon">
+                        <i class="fas fa-door-open"></i>
                     </div>
+                    <h3>Portaria remota</h3>
+                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
                 </div>
-                <div class="carousel-item">
-                    <div class="carousel-placeholder">
-                        <i class="fas fa-video"></i>
-                        <span>Câmera WiFi</span>
+                <div class="industry-box">
+                    <div class="ind-icon">
+                        <i class="fas fa-tv"></i>
                     </div>
+                    <h3>CFTV</h3>
+                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
                 </div>
-            </div>
-            <div class="carousel-dots">
-                <span class="active"></span>
-                <span></span>
-                <span></span>
+                <div class="industry-box">
+                    <div class="ind-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Alarmes</h3>
+                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
+                </div>
+                <div class="industry-box">
+                    <div class="ind-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Controle de acesso</h3>
+                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
+    <!-- ============================================
+         MANAGEMENT TABS SECTION
+         ============================================ -->
+    <section class="management-tabs-section">
         <div class="container">
-            <div class="section-label">Equipe</div>
-            <h2 class="section-title">Nossos Profissionais e Técnicos</h2>
-            <div class="section-divider"></div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">
-                        <div class="team-photo-placeholder">
-                            <div class="person-silhouette"></div>
-                        </div>
-                        <div class="team-social-overlay">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h4>Peshokan Mehda</h4>
-                        <p>Suporte</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <div class="team-photo-placeholder">
-                            <div class="person-silhouette"></div>
-                        </div>
-                        <div class="team-social-overlay">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h4>Tomas Broun</h4>
-                        <p>Engenheiro</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <div class="team-photo-placeholder">
-                            <div class="person-silhouette"></div>
-                        </div>
-                        <div class="team-social-overlay">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h4>Peter Fransisco</h4>
-                        <p>Técnico</p>
-                    </div>
+            <div class="section-header">
+                <span class="section-tagline">Por Que Nos Escolher</span>
+                <h2 class="section-title">Gerencie seu CFTV Online<br>com Facilidade</h2>
+                <div class="accent-line">
+                    <span></span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Smart Projects Section -->
-    <section class="smart-projects">
-        <div class="smart-projects-image">
-            <div class="smart-projects-image-placeholder">
-                <div class="person-headset"></div>
-            </div>
-        </div>
-        <div class="smart-projects-text">
-            <div class="section-label">Projetos</div>
-            <h3>Projetos Inteligentes e Exclusivos em Segurança</h3>
-            <div class="section-divider"></div>
-            <p>Becoming ever more complex and challenging to repair. Our service has these challenges by putting technology.</p>
-            <div class="smart-features">
-                <div class="smart-feature">
-                    <div class="smart-feature-icon">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-                    <div class="smart-feature-text">
-                        <h5>Projeto Personalizado</h5>
-                        <p>Our customers include individuals, car and businesses are in looking for more customers.</p>
-                    </div>
-                </div>
-                <div class="smart-feature">
-                    <div class="smart-feature-icon">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <div class="smart-feature-text">
-                        <h5>Integração de Sistemas</h5>
-                        <p>Our customers include individuals, car and businesses are in looking for more customers.</p>
-                    </div>
-                </div>
-                <div class="smart-feature">
-                    <div class="smart-feature-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="smart-feature-text">
-                        <h5>Tecnologia e Eficiência</h5>
-                        <p>Our customers include individuals, car and businesses are in looking for more customers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CCTV Management -->
-    <section class="cctv-management">
-        <div class="container">
-            <div class="section-label">Sistema Online</div>
-            <h2 class="section-title">Gerencie seu CFTV Online</h2>
-            <div class="section-divider"></div>
-            <div class="cctv-tabs">
-                <div class="cctv-tab active">
+            <!-- Botões de Navegação das Tabs -->
+            <div class="tabs-navigation-row">
+                <button class="tab-nav-btn active" data-tab="finger">
                     <i class="fas fa-fingerprint"></i>
                     Identificação Digital
-                </div>
-                <div class="cctv-tab">
-                    <i class="fas fa-key"></i>
-                    Chaves de acesso
-                </div>
-                <div class="cctv-tab">
-                    <i class="fas fa-shield-alt"></i>
+                </button>
+                <button class="tab-nav-btn" data-tab="security">
+                    <i class="fas fa-user-shield"></i>
+                    Solução de Segurança
+                </button>
+                <button class="tab-nav-btn" data-tab="safety">
+                    <i class="fas fa-broadcast-tower"></i>
                     Segurança CFTV
+                </button>
+            </div>
+
+            <!-- TAB 1: IDENTIFICAÇÃO DIGITAL (COM VÍDEO) -->
+            <div class="tab-content-panel active" id="tab-finger">
+                <div class="grid-2">
+                    <div class="tab-image-pane">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" 
+                             alt="Câmera de Vigilância com Biometria" 
+                             class="image-border-radius">
+                        <div class="play-button-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="tab-text-pane">
+                        <h3>Reconhecimento e Identificação</h3>
+                        <p class="body-text">
+                            Tornando-se cada vez mais complexo e desafiador. Nosso serviço supera esses desafios 
+                            combinando tecnologia, inovação e técnicos altamente qualificados para atender às 
+                            necessidades do cliente com total confiança.
+                        </p>
+
+                        <h4>Central de Ajuda 24/7</h4>
+                        <ul class="bullet-blue-list">
+                            <li>Produtos bem estabelecidos para fornecer soluções confiáveis.</li>
+                            <li>Nossa empresa oferece manutenção e reparos desde 1972.</li>
+                            <li>Soluções personalizadas para cada tipo de necessidade.</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary">Contate Agora</a>
+                    </div>
                 </div>
             </div>
-            <div class="cctv-content">
-                <div class="cctv-text">
-                    <h4>Reconhecimento Avançado</h4>
-                    <p>Becoming ever more complex and challenging to repair. Our service has the upper hand in overcoming these challenges by technology and innovation and leads to best technologies to meet the customer's you can.</p>
-                    <h5>Suporte 24/7</h5>
-                    <ul>
-                        <li>Morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
-                        <li>Our company offers the maintenance to repair since 1972.</li>
-                        <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                    </ul>
-                    <button class="btn-blue">Saiba mais</button>
+
+            <!-- TAB 2: SOLUÇÃO DE SEGURANÇA (APENAS IMAGEM) -->
+            <div class="tab-content-panel" id="tab-security">
+                <div class="grid-2">
+                    <div class="tab-text-pane">
+                        <h3>Segurança e Proteção Avançada</h3>
+                        <p class="body-text">
+                            Sistemas de segurança completos para proteger seu lar e empresa. 
+                            Monitoramento 24 horas com tecnologia de ponta e equipe especializada 
+                            pronta para atender qualquer emergência.
+                        </p>
+
+                        <h4>Suporte Especializado</h4>
+                        <ul class="bullet-blue-list">
+                            <li>Equipe técnica disponível 24/7 para resolver qualquer incidente.</li>
+                            <li>Proteção avançada contra ameaças e invasão.</li>
+                            <li>Integração completa com outros sistemas de segurança.</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary">Contate Agora</a>
+                    </div>
+                    <div class="tab-image-pane">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" 
+                             alt="Sistema de Segurança" 
+                             class="image-border-radius">
+                    </div>
                 </div>
-                <div class="cctv-image">
-                    <div class="cctv-image-placeholder">
-                        <div class="camera-icon"></div>
+            </div>
+
+            <!-- TAB 3: SEGURANÇA CFTV (COM VÍDEO) -->
+            <div class="tab-content-panel" id="tab-safety">
+                <div class="grid-2">
+                    <div class="tab-image-pane">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" 
+                             alt="Segurança de Rede e CFTV" 
+                             class="image-border-radius">
+                        <div class="play-button-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="tab-text-pane">
+                        <h3>Segurança de Rede e CFTV</h3>
+                        <p class="body-text">
+                            Proteção avançada para sua infraestrutura digital contra ameaças cibernéticas. 
+                            Monitoramento contínuo de rede com câmeras IP de alta resolução e criptografia.
+                        </p>
+
+                        <h4>Proteção Contra Hackers</h4>
+                        <ul class="bullet-blue-list">
+                            <li>Defesa cibernética avançada para proteger seus dados.</li>
+                            <li>Câmeras IP com criptografia e proteção de dados.</li>
+                            <li>Acesso remoto seguro e com criptografia.</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-primary">Contate Agora</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-section">
+    <!-- ============================================
+         TEAM SECTION
+         ============================================ -->
+    <section class="team-section">
         <div class="container">
-            <div class="contact-content">
-                <div class="contact-text">
-                    <div class="section-label">Fale Conosco</div>
-                    <h3>Preencha o formulário para solicitar um orçamento sem compromisso.</h3>
-                    <div class="section-divider"></div>
+            <div class="section-header">
+                <span class="section-tagline">Equipe</span>
+                <h2 class="section-title">Nossos Profissionais e Técnicos</h2>
+                <div class="accent-line">
+                    <span></span>
                 </div>
-                <div class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Nome <span>*</span></label>
-                            <input type="text" placeholder="Seu nome">
-                        </div>
-                        <div class="form-group">
-                            <label>Email <span>*</span></label>
-                            <input type="email" placeholder="Seu email">
-                        </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="team-member-card">
+                    <div class="image-inner">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Especialista em Suporte">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Mega Pixel</label>
-                            <select>
-                                <option>Selecione</option>
-                                <option>2MP</option>
-                                <option>4MP</option>
-                                <option>8MP</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Select Product</label>
-                            <select>
-                                <option>Selecione</option>
-                                <option>CFTV</option>
-                                <option>Alarme</option>
-                                <option>Controle de Acesso</option>
-                            </select>
-                        </div>
+                    <div class="member-meta-box">
+                        <h3>Peshotan Mehta</h3>
+                        <span>Suporte</span>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="image-inner">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Engenheiro Especialista">
+                    </div>
+                    <div class="member-meta-box">
+                        <h3>Tomas Broun</h3>
+                        <span>Engenheiro</span>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="image-inner">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Técnico">
+                    </div>
+                    <div class="member-meta-box">
+                        <h3>Peter Fransisco</h3>
+                        <span>Técnico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section class="dark-contact-wrapper" id="contato">
+        <div class="contact-container">
+            <div class="contact-left">
+                <div class="vector-overlay"></div>
+                <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" style="position:absolute; left:20px; top:30%;">
+                    <path d="M22 21H2V3h20v18zM2 7l10 7 10-7"/>
+                </svg>
+                <div style="z-index: 5; text-align: center; color: rgba(255,255,255,0.3); border: 1px dashed rgba(255,255,255,0.15); padding: 30px; border-radius: 8px; margin-bottom: 60px; width: 80%;">
+                    <i class="fa-regular fa-image" style="font-size: 2.5rem; margin-bottom: 10px; display:block; color: var(--color-primary);"></i>
+                    [Imagem: Profissional de Segurança]
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <div class="contact-subtitle">Fale Conosco</div>
+                <h2 class="contact-title">Preencha o formulário para solicitar um orçamento sem compromisso.</h2>
+
+                <form class="contact-form" id="mainContactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nome*" required id="formName">
                     </div>
                     <div class="form-group">
-                        <label>Mensagem <span>*</span></label>
-                        <textarea placeholder="Sua mensagem"></textarea>
+                        <input type="email" class="form-control" placeholder="Email*" required id="formEmail">
                     </div>
-                    <button class="btn-contact">Contate-nos</button>
-                </div>
+                    <div class="form-group">
+                        <select class="form-control" id="formMegaPixel" required>
+                            <option value="" disabled selected>Mega Pixel</option>
+                            <option value="2mp">2 MP</option>
+                            <option value="4mp">4 MP</option>
+                            <option value="8mp">8 MP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="formProduct" required>
+                            <option value="" disabled selected>Selecione o Produto</option>
+                            <option value="p1">Câmera Interna</option>
+                            <option value="p2">Câmera Externa</option>
+                            <option value="p3">Kit Completo</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea class="form-control" placeholder="Message*" required id="formMessage"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Contate-nos</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>SEGURANÇA ELETRÔNICA</h3>
-                    <p>Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="newsletter-wrapper">
+            <div class="newsletter-inner">
+                <h3 class="newsletter-text">Assine nossa newsletter e<br>receba atualizações</h3>
+                <div style="display: flex; gap: 10px; width: 100%; max-width: 400px;">
+                    <input type="email" placeholder="Seu Endereço de E-mail" style="flex-grow: 1; border: 1px solid #cbd5e0; padding: 12px 15px; border-radius: 4px; font-size: 0.9rem;">
+                    <button style="background-color: var(--color-primary); color: white; border: none; padding: 0 25px; border-radius: 4px; font-weight: 600; cursor: pointer;">Enviar</button>
                 </div>
-                <div class="footer-links">
-                    <h4>Nossos serviços</h4>
-                    <ul>
-                        <li><a href="#">Internet Providers</a></li>
-                        <li><a href="#">Social Services</a></li>
-                        <li><a href="#">Locations</a></li>
-                        <li><a href="#">Refer a Friend</a></li>
-                        <li><a href="#">Event planners</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h4>Contato rápido</h4>
-                    <p>Sign up now for weekly news and our latest offers.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Email Address">
-                        <button>Enviar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2024 <a href="#">Segurança Eletrônica</a>. Todos os direitos reservados.</p>
             </div>
         </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i> Trend Segurança
+                </div>
+                <p>Um resumo mensal das últimas notícias e recursos. Nossa empresa foi criada para tornar sua segurança mais inteligente e acessível.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="footer-heading">Nossos serviços</h3>
+                <ul class="footer-links-list">
+                    <li>Parceiros de Indicação</li>
+                    <li>Serviços de Espaço</li>
+                    <li>Proprietários</li>
+                    <li>Indique um amigo</li>
+                    <li>Organizadores de eventos</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="footer-heading">Postagens Recentes</h3>
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 18px;">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=80&q=80" alt="Post 1" style="width: 65px; height: 55px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                        <h4 style="font-size: 0.85rem; font-weight: 500; color: var(--color-white); margin-bottom: 4px;">Janelas Solares Podem Ser</h4>
+                        <span style="font-size: 0.75rem; color: #a0aec0;">1 de Janeiro de 2021</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="footer-heading">Contato rápido</h3>
+                <p style="color:#a0aec0; font-size:0.85rem; margin-bottom:15px;">Cadastre-se agora para receber notícias semanais e nossas atualizações.</p>
+                <form onsubmit="event.preventDefault(); alert('Inscrito com sucesso!');">
+                    <div class="footer-form-group">
+                        <input type="email" class="footer-control" placeholder="Email Address" required>
+                    </div>
+                    <button type="submit" class="btn-footer-submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright-bar">&copy; Copyright © Trend Segurança 2024</div>
     </footer>
 
-    <!-- ====== EXIT INTENT WHATSAPP MODAL ====== -->
-    <div class="exit-modal-overlay" id="exitModal">
-        <div class="exit-modal">
-            <div class="exit-modal-header">
-                <button class="exit-modal-close" id="exitModalClose">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="exit-modal-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <h2>Ei, espere! ✋</h2>
-                <p>Não saia sem conhecer nosso <strong>orçamento exclusivo</strong> para você!</p>
-            </div>
-            <div class="exit-modal-body">
-                <p class="offer-text">
-                    Proteja sua família e seu patrimônio com a <strong>melhor tecnologia em segurança eletrônica</strong>. 
-                    Fale agora com nosso consultor e ganhe condições especiais! 🎉
-                </p>
-                <ul class="exit-benefits">
-                    <li><i class="fas fa-check-circle"></i> Orçamento 100% gratuito e sem compromisso</li>
-                    <li><i class="fas fa-check-circle"></i> Atendimento rápido pelo WhatsApp</li>
-                    <li><i class="fas fa-check-circle"></i> Desconto especial para novos clientes</li>
-                    <li><i class="fas fa-check-circle"></i> Suporte técnico 24 horas</li>
-                </ul>
-                <a href="https://wa.me/5517981859890?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20seguran%C3%A7a%20eletr%C3%B4nica.%20Podem%20me%20enviar%20um%20or%C3%A7amento%3F" 
-                   target="_blank" 
-                   class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    Falar no WhatsApp Agora
-                </a>
-            </div>
-            <div class="exit-modal-footer">
-                <p><span class="pulse-dot"></span> Um consultor está online agora para te atender!</p>
-            </div>
-        </div>
-    </div>
-
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
     <script>
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ============================================
+            // MENU MOBILE
+            // ============================================
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // CCTV tabs
-        const tabs = document.querySelectorAll('.cctv-tab');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-            });
-        });
-
-        // Carousel dots
-        const dots = document.querySelectorAll('.carousel-dots span');
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                dots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-            });
-        });
-
-        // Smooth scroll effect on navbar
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.08)';
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('open');
+                    const icon = menuToggle.querySelector('i');
+                    if (navMenu.classList.contains('open')) {
+                        icon.classList.replace('fa-bars', 'fa-xmark');
+                    } else {
+                        icon.classList.replace('fa-xmark', 'fa-bars');
+                    }
+                });
             }
-        });
 
-        // Simple animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // ============================================
+            // SISTEMA DE TABS INTERATIVAS
+            // ============================================
+            const tabButtons = document.querySelectorAll('.tab-nav-btn');
+            const tabPanels = document.querySelectorAll('.tab-content-panel');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    const tabId = this.getAttribute('data-tab');
+                    const activePanel = document.getElementById('tab-' + tabId);
+                    if (activePanel) {
+                        activePanel.classList.add('active');
+                    }
+                });
             });
-        }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .solution-card, .team-card, .category-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+            // ============================================
+            // BOTÕES DE PLAY (VIDEO)
+            // ============================================
+            const playButtons = document.querySelectorAll('.play-button-overlay, .play-trigger-btn');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('Vídeo demonstrativo será reproduzido em breve!');
+                });
+            });
+
+            // ============================================
+            // BOTÃO CÂMERA - SCROLL SUAVE PARA CONTATO
+            // ============================================
+            const cameraButton = document.querySelector('.camera-float');
+            if (cameraButton) {
+                cameraButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const contactSection = document.querySelector('#contato');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
         });
 
         // ============================================
-        // EXIT INTENT DETECTION
+        // ENVIO DO FORMULÁRIO
         // ============================================
-        const exitModal = document.getElementById('exitModal');
-        const exitModalClose = document.getElementById('exitModalClose');
-        let exitIntentShown = false;
-
-        // Detect exit intent (mouse leaving viewport towards top)
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 10 && !exitIntentShown) {
-                exitIntentShown = true;
-                exitModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-
-        // Also detect when user tries to close tab (for browsers that allow it)
-        window.addEventListener('beforeunload', (e) => {
-            if (!exitIntentShown) {
-                exitIntentShown = true;
-            }
-        });
-
-        // Close modal
-        exitModalClose.addEventListener('click', () => {
-            exitModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Close modal on overlay click
-        exitModal.addEventListener('click', (e) => {
-            if (e.target === exitModal) {
-                exitModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && exitModal.classList.contains('active')) {
-                exitModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+            document.getElementById('mainContactForm').reset();
+        }
     </script>
 
 </body>

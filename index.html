@@ -71,6 +71,73 @@
         }
 
         /* ============================================
+           TOP BAR - INFORMAÇÕES DE CONTATO
+           ============================================ */
+        .top-bar {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 10px 0;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .top-bar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-left a {
+            color: var(--color-white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .top-bar-left a:hover {
+            opacity: 0.85;
+        }
+
+        .top-bar-left i {
+            font-size: 0.9rem;
+        }
+
+        .top-bar-divider {
+            opacity: 0.6;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-social-link {
+            color: var(--color-white);
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-social-link:hover {
+            opacity: 0.75;
+        }
+
+        /* ============================================
            HEADER
            ============================================ */
         .main-header {
@@ -96,18 +163,14 @@
             flex-shrink: 0;
         }
 
-        .logo svg {
-            width: 28px;
-            height: 28px;
-            flex-shrink: 0;
+        .logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
         }
 
         .logo-text {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--color-text-dark);
-            letter-spacing: -0.5px;
-            line-height: 1.2;
+            display: none;
         }
 
         .nav-menu {
@@ -1171,6 +1234,11 @@
            RESPONSIVO - TABLET (768px+)
            ============================================ */
         @media (min-width: 768px) {
+            .top-bar {
+                padding: 12px 0;
+                font-size: 0.9rem;
+            }
+
             .container {
                 padding: 0 24px;
             }
@@ -1471,7 +1539,34 @@
         /* ============================================
            UTILITÁRIOS
            ============================================ */
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 8px 0;
+                font-size: 0.75rem;
+            }
+            
+            .top-bar-container {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            
+            .top-bar-left {
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .top-bar-divider {
+                display: none;
+            }
+        }
+
         @media (max-width: 480px) {
+            .top-bar-left {
+                flex-direction: column;
+                gap: 5px;
+            }
+
             .logo-text {
                 font-size: 1.1rem;
             }
@@ -1547,6 +1642,37 @@
 <body>
 
     <!-- ============================================
+         TOP BAR - CONTATO E REDES SOCIAIS
+         ============================================ -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <a href="tel:17981397628">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Fale conosco (17) 98139-7628</span>
+                </a>
+                <span class="top-bar-divider">|</span>
+                <a href="mailto:contato@vtechriopreto.com.br">
+                    <i class="fas fa-envelope"></i>
+                    <span>contato@vtechriopreto.com.br</span>
+                </a>
+            </div>
+            
+            <div class="top-bar-right">
+                <a href="#" class="top-social-link" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="top-social-link" aria-label="X (Twitter)">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="top-social-link" aria-label="Pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
          BOTÃO CÂMERA DE SEGURANÇA FLUTUANTE
          ============================================ -->
     <a href="#contato" 
@@ -1562,11 +1688,7 @@
     <header class="main-header">
         <div class="container header-container">
             <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 4H20C24.4183 4 28 7.58172 28 12C28 16.4183 24.4183 20 20 20H12V28H6V4Z" fill="#0056e2"/>
-                    <path d="M12 10H18C19.1046 10 20 10.8954 20 12C20 13.1046 19.1046 14 18 14H12V10Z" fill="#ffffff"/>
-                    <path d="M6 16H14V20H6V16Z" fill="#002d7a"/>
-                </svg>
+                <img src="logotipo.png" alt="Trend Segurança Logo">
                 <span class="logo-text">Trend Segurança</span>
             </div>
 

@@ -2,37 +2,19 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Trend Segurança - Soluções completas em segurança eletrônica para residências, empresas e condomínios.">
-    <title>Trend Segurança - Soluções Inteligentes em Monitoramento e CFTV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTECH - Segurança de Verdade</title>
     
-    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <style>
-        /* ============================================
-           VARIÁVEIS E RESET
-           ============================================ */
-        :root {
-            --color-primary: #0056e2;
-            --color-primary-dark: #003db3;
-            --color-secondary: #002d7a;
-            --color-text-dark: #0e1726;
-            --color-text-muted: #64748b;
-            --color-light-bg: #f8fafc;
-            --color-white: #ffffff;
-            --shadow-sm: 0 2px 8px rgba(14, 23, 38, 0.04);
-            --shadow-md: 0 10px 30px rgba(14, 23, 38, 0.06);
-            --shadow-lg: 0 20px 50px rgba(14, 23, 38, 0.12);
-            --radius-card: 10px;
-            --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
+        /* ==========================================
+           0. RESET E CONFIGURAÇÕES DE ESCOPO GLOBAL
+           ========================================== */
         * {
             margin: 0;
             padding: 0;
@@ -41,2300 +23,2313 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
         }
 
         body {
-            font-family: 'Inter', 'Poppins', sans-serif;
-            background-color: var(--color-white);
-            color: var(--color-text-dark);
-            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            width: 100%;
-            max-width: 100vw;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        /* Variaveis da Parte 3 e Parte 5 encapsuladas globalmente sem conflito */
+        :root {
+            --p3-primary-blue: #0d59e4;
+            --p3-dark-blue: #0A2540;
+            --p3-max-width: 1280px;
+            --p5-bg-dark-blue: #030a16;
+            --p5-bg-footer: #020710;
+            --p5-primary-blue: #1b6ef3;
+            --p5-border-color: rgba(255, 255, 255, 0.15);
+            --p5-input-bg: rgba(255, 255, 255, 0.03);
+            --p5-text-muted: #a3b3c5;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        /* ============================================
-           TOP BAR - INFORMAÇÕES DE CONTATO
-           ============================================ */
-        .top-bar {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            padding: 10px 0;
-            font-size: 0.85rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .top-bar-container {
+        /* ==========================================
+           1. PARTE 1 - ESTRUTURA DO TOPO E SOBRE NÓS
+           ========================================== */
+        .p1-top-bar {
+            background-color: #0056e2;
+            color: #ffffff;
+            padding: 12px 10%;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        .top-bar-left {
-            display: flex;
             align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            font-size: 11px;
+            font-weight: 500;
         }
 
-        .top-bar-left a {
-            color: var(--color-white);
+        .p1-top-bar-left span {
+            margin-right: 20px;
+        }
+
+        .p1-top-bar-right a {
+            color: #ffffff;
+            margin-left: 15px;
             text-decoration: none;
-            transition: opacity 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            font-size: 11px;
+            transition: opacity 0.3s;
         }
 
-        .top-bar-left a:hover {
-            opacity: 0.85;
+        .p1-top-bar-right a:hover {
+            opacity: 0.8;
         }
 
-        .top-bar-left i {
-            font-size: 0.9rem;
-        }
-
-        .top-bar-divider {
-            opacity: 0.6;
-        }
-
-        .top-bar-right {
+        .p1-main-header {
+            background-color: #ffffff;
+            padding: 20px 10%;
             display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .top-social-link {
-            color: var(--color-white);
-            font-size: 0.9rem;
-            transition: opacity 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .top-social-link:hover {
-            opacity: 0.75;
-        }
-
-        /* ============================================
-           HEADER
-           ============================================ */
-        .main-header {
-            background-color: var(--color-white);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
-        .logo {
+        .p1-logo-container {
             display: flex;
             align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            flex-shrink: 0;
         }
 
-        .logo img {
-            height: 40px;
+        .p1-logo-image {
+            height: 48px;
             width: auto;
+            display: block;
             object-fit: contain;
         }
 
-        .logo-text {
-            display: none;
-        }
-
-        .nav-menu {
-            display: none;
-        }
-
-        .nav-menu.open {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: var(--color-white);
-            padding: 20px 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .nav-menu ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--color-text-dark);
-            font-size: 1rem;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-            display: block;
-            padding: 12px 16px;
-            border-radius: 8px;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--color-primary);
-            background-color: var(--color-light-bg);
-        }
-
-        .header-actions {
-            display: none;
-        }
-
-        .mobile-menu-toggle {
+        .p1-nav-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--color-text-dark);
-            cursor: pointer;
-            border-radius: 8px;
-            transition: var(--transition-smooth);
-            flex-shrink: 0;
-        }
-
-        .mobile-menu-toggle:hover {
-            background-color: var(--color-light-bg);
-        }
-
-        /* ============================================
-           BOTÕES GERAIS
-           ============================================ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            font-size: 0.938rem;
-            font-weight: 700;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            cursor: pointer;
-            border: 2px solid transparent;
-            white-space: nowrap;
-        }
-
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--color-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 86, 226, 0.3);
-        }
-
-        .btn-light {
-            background-color: var(--color-white);
-            color: var(--color-text-dark);
-        }
-
-        .btn-light:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
-        }
-
-        .btn-light-solid {
-            background-color: var(--color-white);
-            color: var(--color-primary);
-        }
-
-        .btn-light-solid:hover {
-            background-color: var(--color-light-bg);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-light {
-            background-color: transparent;
-            border-color: rgba(255, 255, 255, 0.4);
-            color: var(--color-white);
-        }
-
-        .btn-outline-light:hover {
-            border-color: var(--color-white);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* ============================================
-           ELEMENTOS DE SEÇÃO
-           ============================================ */
-        .section-header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .section-tagline {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--color-text-dark);
-            line-height: 1.3;
-        }
-
-        .accent-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 12px;
-        }
-
-        .accent-line.text-left {
-            justify-content: flex-start;
-        }
-
-        .accent-line span {
-            width: 40px;
-            height: 3px;
-            background-color: var(--color-primary);
-            position: relative;
-            display: block;
-        }
-
-        .accent-line span::after {
-            content: '';
-            position: absolute;
-            right: -8px;
-            top: -2px;
-            width: 5px;
-            height: 5px;
-            background-color: var(--color-primary);
-            transform: rotate(45deg);
-        }
-
-        .text-left {
-            text-align: left;
-        }
-
-        .text-white {
-            color: var(--color-white) !important;
-        }
-
-        .text-white-op {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .color-white-op {
-            color: rgba(255, 255, 255, 0.5) !important;
-        }
-
-        .mt-4 {
-            margin-top: 1.5rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 1.5rem;
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        .hero-section {
-            background: linear-gradient(to right, rgba(14, 23, 38, 0.92) 40%, rgba(14, 23, 38, 0.3) 100%),
-                        url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1800&q=80');
-            background-size: cover;
-            background-position: center center;
-            padding: 100px 0 140px 0;
-            position: relative;
-            color: var(--color-white);
-            min-height: auto;
-        }
-
-        .hero-content {
-            max-width: 100%;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .hero-buttons .btn {
-            width: 100%;
-            max-width: 300px;
-        }
-
-        .hero-curve {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background-color: var(--color-white);
-            border-radius: 20px 20px 0 0;
-        }
-
-        /* ============================================
-           FEATURES SECTION
-           ============================================ */
-        .features-section {
-            padding: 60px 0 80px 0;
-            position: relative;
-            z-index: 10;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .feature-card {
-            background-color: var(--color-white);
-            padding: 30px 24px;
-            border-radius: var(--radius-card);
-            box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            border: 1px solid rgba(14, 23, 38, 0.02);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .card-bg-number {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 3rem;
-            font-weight: 900;
-            color: rgba(14, 23, 38, 0.03);
-            line-height: 1;
-            user-select: none;
-        }
-
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 20px;
-            color: var(--color-primary);
-            font-size: 1.75rem;
-        }
-
-        .card-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--color-text-dark);
-            margin-bottom: 12px;
-        }
-
-        .card-text {
-            font-size: 0.9rem;
-            color: var(--color-text-muted);
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           ABOUT SECTION
-           ============================================ */
-        .about-section {
-            padding: 60px 0;
-            background-color: var(--color-light-bg);
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr;
             gap: 30px;
         }
 
-        .grid-2 .about-text-content {
-            order: 2;
+        .p1-main-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
         }
 
-        .grid-2 .about-image-wrapper {
-            order: 1;
+        .p1-main-menu a {
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
-        .highlight-p {
-            font-size: 0.9rem;
-            color: var(--color-text-muted);
-            margin: 20px 0;
+        .p1-main-menu a:hover, .p1-main-menu a.active {
+            color: #0056e2;
+        }
+
+        .p1-search-icon {
+            color: #1e293b;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .p1-btn-budget {
+            background-color: #0056e2;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .p1-btn-budget:hover {
+            background-color: #0045b5;
+        }
+
+        /* Banner Rotativo */
+        .p1-hero-section {
+            position: relative;
+            height: 580px;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        .p1-hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%);
+            z-index: 1;
+        }
+
+        .p1-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 540px;
+            color: #ffffff;
+        }
+
+        .p1-hero-content h1 {
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .p1-hero-content p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #f1f5f9;
+            margin-bottom: 30px;
+        }
+
+        .p1-btn-contact-hero {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #0f172a;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background-color 0.2s;
+        }
+
+        .p1-btn-contact-hero:hover {
+            background-color: #e2e8f0;
+        }
+
+        .p1-slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background-color: #0056e2;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 10;
+            font-size: 11px;
+            border-radius: 2px;
+            transition: background-color 0.2s;
+        }
+
+        .p1-slider-arrow:hover {
+            background-color: #0045b5;
+        }
+
+        .p1-arrow-left { left: 20px; }
+        .p1-arrow-right { right: 20px; }
+
+        /* Embrulho do Conteúdo Principal */
+        .p1-main-content-wrapper {
+            position: relative;
+            z-index: 20;
+            margin: -50px 10% 0 10%;
+            background-color: #ffffff;
+            border-radius: 6px 6px 0 0;
+            padding: 60px 5% 80px 5%;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.03);
+            text-align: center;
+        }
+
+        .p1-section-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0056e2;
+            text-transform: capitalize;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .p1-section-title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .p1-blue-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin: 0 auto 50px auto;
+        }
+
+        .p1-blue-indicator span {
+            height: 3px;
+            background-color: #0056e2;
+            display: inline-block;
+        }
+
+        .p1-blue-indicator span.long { width: 30px; }
+        .p1-blue-indicator span.short { width: 6px; }
+
+        /* Grid de Cards de Benefício */
+        .p1-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 90px;
+        }
+
+        .p1-benefit-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 40px 30px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .p1-benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .p1-card-header-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .p1-card-icon {
+            width: 38px;
+            height: 38px;
+        }
+
+        .p1-card-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #e2e8f0;
+        }
+
+        .p1-benefit-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .p1-benefit-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Seção Experiência e Confiança */
+        .p1-experience-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .p1-experience-content .p1-section-title {
+            line-height: 1.2;
+        }
+
+        .p1-indicator-left {
+            justify-content: flex-start;
+            margin: 15px 0 30px 0;
+        }
+
+        .p1-experience-content p {
+            font-size: 13.5px;
+            color: #64748b;
             line-height: 1.7;
+            margin-bottom: 30px;
         }
 
-        .image-border-radius {
-            border-radius: var(--radius-card);
+        .p1-btn-more {
+            display: inline-block;
+            background-color: #0056e2;
+            color: #ffffff;
+            padding: 14px 36px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background-color 0.2s;
+        }
+
+        .p1-btn-more:hover {
+            background-color: #0045b5;
+        }
+
+        .p1-experience-image {
+            width: 100%;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
-        .image-border-radius img {
+        .p1-experience-image img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* ============================================
-           VIDEO SECTION
-           ============================================ */
-        .video-promo-section {
+        /* ==========================================
+           2. PARTE 2 - HERO ESCURO E GRID DE SOLUÇÕES
+           ========================================== */
+        .p2-hero-section {
             position: relative;
-            background-color: var(--color-secondary);
+            background: linear-gradient(135deg, #0b1528 0%, #060a12 100%);
+            background-image: linear-gradient(to right, rgba(11, 21, 40, 0.95), rgba(6, 10, 18, 0.92)), url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 160px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .video-banner-content {
-            padding: 60px 0 100px 0;
+        .p2-hero-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
         }
 
-        .video-wrapper {
+        .p2-hero-video-wrapper {
+            flex: 1;
             position: relative;
-            border-radius: var(--radius-card);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            aspect-ratio: 16 / 10;
         }
 
-        .video-thumb {
+        .p2-hero-video-wrapper img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
-        .play-trigger-btn {
+        .p2-play-button {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: var(--color-white);
-            border-radius: 50%;
-            border: none;
-            color: var(--color-primary);
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
-            transition: var(--transition-smooth);
-        }
-
-        .play-trigger-btn:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            background-color: var(--color-primary);
-            color: var(--color-white);
-        }
-
-        .dual-tabs-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: -60px;
-            position: relative;
-            z-index: 50;
-            padding-bottom: 60px;
-            padding-left: 16px;
-            padding-right: 16px;
-        }
-
-        .tab-card-floating {
-            background-color: var(--color-white);
-            padding: 24px;
-            border-radius: var(--radius-card);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .tab-icon-blue {
-            font-size: 1.5rem;
-            color: var(--color-primary);
-            flex-shrink: 0;
-        }
-
-        .tab-info h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .tab-info a {
-            font-size: 0.85rem;
-            color: var(--color-primary);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        /* ============================================
-           SOLUTIONS SECTION
-           ============================================ */
-        .industries-section {
-            padding: 60px 0;
-        }
-
-        .row-gap-4 {
-            row-gap: 20px;
-        }
-
-        .industry-box {
-            background-color: var(--color-white);
-            padding: 30px 20px;
-            border-radius: var(--radius-card);
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(14, 23, 38, 0.02);
-            border: 1px solid rgba(14, 23, 38, 0.04);
-            transition: var(--transition-smooth);
-        }
-
-        .industry-box:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-
-        .ind-icon {
-            width: 45px;
-            height: 45px;
-            margin: 0 auto 16px auto;
-            color: var(--color-primary);
-            font-size: 1.5rem;
-        }
-
-        .industry-box h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .industry-box p {
-            font-size: 0.85rem;
-            color: var(--color-text-muted);
-            line-height: 1.5;
-        }
-
-        /* ============================================
-           MANAGEMENT TABS SECTION
-           ============================================ */
-        .management-tabs-section {
-            padding: 60px 0;
-            background-color: var(--color-light-bg);
-        }
-
-        .tabs-navigation-row {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .tab-nav-btn {
-            padding: 14px 20px;
-            background-color: var(--color-white);
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-weight: 700;
-            color: var(--color-primary);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-sm);
-            width: 100%;
-        }
-
-        .tab-nav-btn i {
-            font-size: 1.1rem;
-        }
-
-        .tab-nav-btn.active,
-        .tab-nav-btn:hover {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 86, 226, 0.2);
-        }
-
-        .tab-content-panel {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .tab-content-panel.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .tab-image-pane {
-            position: relative;
-        }
-
-        .play-button-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background-color: var(--color-primary);
+            width: 65px;
+            height: 65px;
+            background-color: #ffffff;
             border-radius: 50%;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .play-button-overlay:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            background-color: var(--color-primary-dark);
+        .p2-play-button:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            background-color: #f0f0f0;
         }
 
-        .play-button-overlay i {
-            color: var(--color-white);
-            font-size: 1.25rem;
+        .p2-play-button i {
+            color: #0056ff;
+            font-size: 20px;
             margin-left: 4px;
         }
 
-        .tab-text-pane h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: var(--color-text-dark);
+        .p2-hero-content {
+            flex: 1;
+            color: #ffffff;
         }
 
-        .tab-text-pane .body-text {
-            font-size: 0.9rem;
-            color: var(--color-text-muted);
-            margin-bottom: 20px;
+        .p2-hero-tag {
+            color: #0056ff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .p2-hero-title {
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .p2-hero-description {
+            font-size: 14px;
             line-height: 1.7;
+            color: #a3b3c5;
+            max-width: 480px;
         }
 
-        .tab-text-pane h4 {
-            font-size: 1.05rem;
+        /* Cards flutuantes intermediários */
+        .p2-floating-container {
+            max-width: 1140px;
+            margin: -60px auto 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 30;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .p2-floating-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 35px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .p2-floating-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .p2-card-left-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .p2-card-icon-box {
+            color: #0056ff;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .p2-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .p2-card-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0056ff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .p2-card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Seção de Soluções */
+        .p2-solutions-section {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .p2-solutions-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .p2-solutions-tag {
+            color: #0056ff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .p2-solutions-main-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .p2-solutions-grid {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .p2-solution-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 45px 35px;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .p2-solution-box:hover {
+            border-color: transparent;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .p2-solution-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f5ff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0056ff;
+            font-size: 22px;
+            margin-bottom: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .p2-solution-box:hover .p2-solution-icon-wrapper {
+            background-color: #0056ff;
+            color: #ffffff;
+        }
+
+        .p2-solution-box-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+
+        .p2-solution-box-text {
+            font-size: 13.5px;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           3. PARTE 3 - PROJETOS, CASOS E EQUIPE
+           ========================================== */
+        .p3-hero-outer {
+            width: 100%;
+            background-color: var(--p3-primary-blue);
+            background-image: 
+                radial-gradient(circle at 15% 50%, transparent 60%, rgba(255, 255, 255, 0.08) 61%, transparent 63%),
+                radial-gradient(circle at 15% 50%, transparent 40%, rgba(255, 255, 255, 0.05) 41%, transparent 43%),
+                radial-gradient(circle at 85% 20%, transparent 50%, rgba(255, 255, 255, 0.06) 51%, transparent 54%),
+                linear-gradient(135deg, #094ec2 0%, #0d61f2 100%);
+            padding: 95px 0;
+            position: relative;
+        }
+
+        .p3-hero-outer::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 5%;
+            width: 300px;
+            height: 300px;
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .p3-hero-inner {
+            max-width: var(--p3-max-width);
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .p3-hero-content {
+            max-width: 550px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .p3-hero-tag {
+            font-size: 13px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .p3-hero-content h1 {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .p3-title-dash-group {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 22px;
+        }
+
+        .p3-dash-main {
+            width: 35px;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        .p3-dash-dot {
+            width: 6px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+        }
+
+        .p3-hero-description {
+            font-size: 13.5px;
+            line-height: 1.6;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .p3-btn-saiba-mais {
+            display: inline-block;
+            background-color: #ffffff;
+            color: var(--p3-primary-blue);
+            padding: 14px 36px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            transition: opacity 0.2s;
+        }
+
+        .p3-btn-saiba-mais:hover {
+            opacity: 0.9;
+        }
+
+        /* Galeria Casos de Sucesso */
+        .p3-gallery-section {
+            max-width: var(--p3-max-width);
+            margin: 0 auto;
+            padding: 70px 30px 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .p3-gallery-tag {
+            font-size: 13px;
+            color: var(--p3-primary-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .p3-gallery-section h2 {
+            font-size: 32px;
+            color: var(--p3-dark-blue);
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--color-text-dark);
         }
 
-        .bullet-blue-list {
-            list-style: none;
-            margin-bottom: 20px;
+        .p3-gallery-decor-line {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 45px;
         }
 
-        .bullet-blue-list li {
-            font-size: 0.9rem;
-            color: var(--color-text-muted);
-            margin-bottom: 10px;
+        .p3-line-main {
+            width: 40px;
+            height: 3px;
+            background-color: var(--p3-primary-blue);
+        }
+
+        .p3-line-dot {
+            width: 8px;
+            height: 3px;
+            background-color: #93c5fd;
+        }
+
+        .p3-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        .p3-gallery-item {
             position: relative;
-            padding-left: 24px;
-            line-height: 1.5;
-        }
-
-        .bullet-blue-list li::before {
-            content: '•';
-            color: var(--color-primary);
-            font-size: 1.25rem;
-            position: absolute;
-            left: 0;
-            top: -4px;
-            font-weight: bold;
-        }
-
-        /* ============================================
-           TEAM SECTION
-           ============================================ */
-        .team-section {
-            padding: 60px 0;
-            background-color: var(--color-light-bg);
-        }
-
-        .team-member-card {
-            background-color: var(--color-white);
-            border-radius: var(--radius-card);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-            position: relative;
+            aspect-ratio: 4 / 3;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
-        .image-inner {
+        .p3-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .p3-chat-bubble {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            background-color: #ffffff;
+            color: #333333;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 10.5px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .p3-pagination-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .p3-dot {
+            width: 18px;
+            height: 6px;
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .p3-dot.active {
+            background-color: var(--p3-primary-blue);
+            width: 28px;
+        }
+
+        /* Seção Equipe */
+        .p3-team-section {
+            max-width: var(--p3-max-width);
+            margin: 0 auto;
+            padding: 50px 30px 120px 30px;
+            text-align: center;
+        }
+
+        .p3-team-tag {
+            font-size: 13px;
+            color: var(--p3-primary-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .p3-team-section h2 {
+            font-size: 32px;
+            color: var(--p3-dark-blue);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .p3-team-decor-line {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin: 0 auto 50px auto;
+        }
+
+        .p3-team-line-main {
+            width: 40px;
+            height: 3px;
+            background-color: var(--p3-primary-blue);
+        }
+
+        .p3-team-line-dot {
+            width: 8px;
+            height: 3px;
+            background-color: #93c5fd;
+        }
+
+        .p3-team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .p3-team-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .p3-member-photo-wrapper {
+            width: 100%;
             aspect-ratio: 1 / 1;
             overflow: hidden;
+            position: relative;
         }
 
-        .image-inner img {
+        .p3-member-photo-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .member-meta-box {
-            padding: 16px;
-            background-color: var(--color-white);
-            position: relative;
-            width: 85%;
-            margin: -25px auto 16px auto;
+        .p3-member-info-badge {
+            background: #ffffff;
+            width: 90%;
+            padding: 15px 10px;
             border-radius: 6px;
-            box-shadow: var(--shadow-md);
-            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            margin-top: -30px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 5;
+            text-align: center;
         }
 
-        .member-meta-box h3 {
-            font-size: 1rem;
+        .p3-member-name {
+            font-size: 14.5px;
             font-weight: 700;
+            color: var(--p3-dark-blue);
+            margin-bottom: 3px;
         }
 
-        .member-meta-box span {
-            font-size: 0.8rem;
-            color: var(--color-primary);
-            font-weight: 600;
+        .p3-member-role {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 500;
         }
 
-        /* ============================================
-           CONTACT SECTION
-           ============================================ */
-        .dark-contact-wrapper {
-            background-color: #0b1325;
-            position: relative;
+        /* Estilo Alternativo (Overlay Card) */
+        .p3-card-overlay-style .p3-member-photo-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            font-family: 'Poppins', sans-serif;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 37, 64, 0.85) 0%, rgba(10, 37, 64, 0.2) 60%);
         }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            position: relative;
-            padding: 40px 16px;
-            background-image: linear-gradient(135deg, rgba(11, 19, 37, 0.88) 0%, rgba(6, 10, 19, 0.96) 100%),
-                              url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
+        .p3-social-media-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 4;
         }
 
-        .contact-left {
-            display: none;
+        .p3-social-btn {
+            width: 26px;
+            height: 26px;
+            background-color: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
         }
 
-        .contact-right {
-            color: var(--color-white);
-            padding: 0;
+        .p3-social-btn:hover {
+            background-color: var(--p3-primary-blue);
+        }
+
+        .p3-card-overlay-style .p3-member-info-badge {
+            background: transparent;
+            box-shadow: none;
+            position: absolute;
+            bottom: 10px;
             z-index: 2;
+            margin-top: 0;
+            margin-bottom: 0;
         }
 
-        .contact-subtitle {
-            color: var(--color-primary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .p3-card-overlay-style .p3-member-name { color: #ffffff; }
+        .p3-card-overlay-style .p3-member-role { color: #cbd5e1; }
+
+        /* ==========================================
+           4. PARTE 4 - INTEGRAÇÃO HERO SPLIT E CFTV DINÂMICO
+           ========================================== */
+        .p4-hero-section {
+            display: flex;
+            width: 100%;
+            min-height: 520px;
+            background-color: #ffffff;
+        }
+
+        .p4-hero-left-wrapper {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .p4-hero-left-image {
+            width: 100%;
+            height: 440px;
+            background: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop') center center / cover no-repeat;
+        }
+
+        .p4-blue-bar {
+            width: 100%;
+            background-color: #0b5ed7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 50px;
+            flex-grow: 1;
+        }
+
+        .p4-blue-bar-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .p4-blue-bar-icon svg {
+            width: 34px;
+            height: 34px;
+            fill: #ffffff;
+        }
+
+        .p4-blue-bar h3 {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .p4-btn-white {
+            background-color: #ffffff;
+            color: #0b5ed7;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+
+        .p4-btn-white:hover {
+            background-color: #f4f6f9;
+        }
+
+        .p4-hero-right {
+            width: 50%;
+            background-color: #060e1e;
+            background-image: radial-gradient(circle at 75% 50%, rgba(11, 94, 215, 0.15) 0%, transparent 65%);
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .p4-hero-right .p4-subtitle {
+            color: #0b5ed7;
+            font-size: 13px;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .contact-title {
-            font-size: 1.5rem;
+        .p4-hero-right h2 {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
             font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .p4-indicator-lines {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 25px;
+        }
+
+        .p4-indicator-lines span {
+            height: 3px;
+            background-color: #0b5ed7;
+            border-radius: 2px;
+        }
+        .p4-indicator-lines span:nth-child(1) { width: 30px; }
+        .p4-indicator-lines span:nth-child(2) { width: 8px; }
+        .p4-indicator-lines span:nth-child(3) { width: 4px; }
+
+        .p4-hero-right .p4-description {
+            color: #8fa0c2;
+            font-size: 13px;
+            line-height: 1.65;
+            margin-bottom: 35px;
+            max-width: 520px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .p4-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .p4-feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .p4-feature-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #0b5ed7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
+
+        .p4-feature-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        .p4-feature-text h3 {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .p4-feature-text p {
+            color: #8fa0c2;
+            font-size: 12.5px;
+            line-height: 1.6;
+            max-width: 450px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Seção Abas de CFTV */
+        .p4-cftv-section {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .p4-cftv-section .p4-section-tag {
+            color: #0b5ed7;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .p4-cftv-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #0b1c3f;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .p4-center-line {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 50px;
+        }
+
+        .p4-center-line span {
+            height: 3px;
+            background-color: #0b5ed7;
+            border-radius: 2px;
+        }
+        .p4-center-line span:nth-child(1) { width: 35px; }
+        .p4-center-line span:nth-child(2) { width: 6px; }
+        .p4-center-line span:nth-child(3) { width: 4px; }
+
+        .p4-tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 55px;
+            flex-wrap: wrap;
+        }
+
+        .p4-tab-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 18px 35px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .p4-tab-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #4a5568;
+            transition: fill 0.2s;
+        }
+
+        .p4-tab-item span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #4a5568;
+            transition: color 0.2s;
+        }
+
+        .p4-tab-item:hover {
+            border-color: #0b5ed7;
+        }
+
+        .p4-tab-item.active {
+            background-color: #0b5ed7;
+            border-color: #0b5ed7;
+            box-shadow: 0 10px 20px rgba(11, 94, 215, 0.15);
+        }
+
+        .p4-tab-item.active svg { fill: #ffffff; }
+        .p4-tab-item.active span { color: #ffffff; }
+
+        /* Container do Conteúdo Dinâmico das Abas */
+        .p4-dynamic-content-box {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            text-align: left;
+            transition: opacity 0.2s ease;
+            opacity: 1;
+        }
+
+        .p4-dynamic-content-box.p4-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .p4-content-left {
+            width: 50%;
+        }
+
+        .p4-content-left h4 {
+            color: #0b5ed7;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .p4-content-left h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #0b1c3f;
             line-height: 1.3;
             margin-bottom: 20px;
         }
 
-        .contact-title::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 3px;
-            background-color: var(--color-primary);
-            margin-top: 12px;
+        .p4-content-left .p4-tab-desc {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #666666;
+            margin-bottom: 25px;
         }
 
-        .contact-form {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+        .p4-bullets-list {
+            list-style: none;
+            margin-bottom: 35px;
         }
 
-        .form-group.full-width {
-            grid-column: span 1;
-        }
-
-        .form-control {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            padding: 14px 16px;
-            color: var(--color-white);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-family: 'Inter', 'Poppins', sans-serif;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .form-control:focus {
-            border-color: var(--color-primary);
-            background: rgba(255, 255, 255, 0.06);
-            outline: none;
-        }
-
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        select.form-control {
-            cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 16px;
-        }
-
-        select.form-control option {
-            background-color: #0b1325;
-            color: var(--color-white);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .btn-submit {
-            grid-column: span 1;
-            justify-self: stretch;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border: none;
-            padding: 14px 35px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-submit:hover {
-            background-color: #0052cc;
-            transform: translateY(-2px);
-        }
-
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background-color: #060a13;
-            color: var(--color-white);
-            position: relative;
-            padding-top: 60px;
-            margin-top: 60px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .newsletter-wrapper {
-            position: relative;
-            top: auto;
-            left: auto;
-            transform: none;
-            width: 100%;
-            max-width: 100%;
-            background: var(--color-white);
-            border-radius: 0;
-            padding: 30px 16px;
-            box-shadow: none;
-            z-index: 10;
-            margin-bottom: 40px;
-        }
-
-        .newsletter-inner {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: center;
-            text-align: center;
-        }
-
-        .newsletter-text {
-            color: var(--color-text-dark);
-            font-size: 1.1rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .newsletter-inner > div {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .newsletter-inner > div > input {
-            width: 100%;
-            border: 1px solid #cbd5e0;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
-
-        .newsletter-inner > div > button {
-            width: 100%;
-            background-color: var(--color-primary);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .footer-content {
-            padding: 40px 16px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-brand .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
+        .p4-bullets-list li {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13.5px;
+            color: #444444;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
+            gap: 10px;
+        }
+
+        .p4-bullets-list li::before {
+            content: "✓";
+            color: #0b5ed7;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .p4-btn-blue {
+            background-color: #0b5ed7;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+
+        .p4-btn-blue:hover {
+            background-color: #0a53be;
+        }
+
+        .p4-content-right {
+            width: 50%;
+        }
+
+        .p4-image-wrapper {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .p4-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .p4-video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 76px;
+            height: 76px;
+            background-color: #0b5ed7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 0 12px rgba(11, 94, 215, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .p4-video-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .p4-video-play-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+            margin-left: 4px;
+        }
+
+        /* ==========================================
+           5. PARTE 5 - FORMULÁRIO DE CONTATO E FOOTER
+           ========================================== */
+        .p5-contact-section {
+            position: relative;
+            min-height: 580px;
+            padding: 90px 10% 80px 10%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(3, 10, 22, 0.85) 30%, rgba(2, 7, 16, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+        }
+
+        .p5-contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 35% 40%, rgba(27, 110, 243, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .p5-form-container {
+            width: 100%;
+            max-width: 560px;
+            z-index: 2;
+        }
+
+        .p5-form-subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .p5-form-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #ffffff;
+            margin-bottom: 12px;
+            max-width: 480px;
+        }
+
+        .p5-title-divider {
+            width: 32px;
+            height: 2px;
+            background-color: #ffffff;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .p5-title-divider::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            width: 4px;
+            height: 2px;
+            background-color: #ffffff;
+            opacity: 0.6;
+        }
+
+        .p5-contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .p5-form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .p5-form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .p5-form-control {
+            width: 100%;
+            background-color: var(--p5-input-bg);
+            border: 1px solid var(--p5-border-color);
+            border-radius: 4px;
+            padding: 14px 16px;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .p5-form-control:focus {
+            border-color: var(--p5-primary-blue);
+        }
+
+        .p5-form-control::placeholder {
+            color: #52667d;
+        }
+
+        textarea.p5-form-control {
+            resize: none;
+            min-height: 120px;
+        }
+
+        .p5-btn-submit {
+            grid-column: span 2;
+            justify-self: start;
+            background-color: var(--p5-primary-blue);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 14px 36px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .p5-btn-submit:hover {
+            background-color: #1556c7;
+        }
+
+        .p5-white-divider {
+            width: 100%;
+            height: 35px;
+            background-color: #ffffff;
+        }
+
+        /* Rodapé */
+        .p5-footer-section {
+            background-color: var(--p5-bg-footer);
+            padding: 70px 10% 50px 10%;
+        }
+
+        .p5-footer-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .p5-footer-brand .p5-logo-container {
+            max-width: 180px;
+            margin-bottom: 10px;
+        }
+
+        .p5-footer-brand .p5-logo-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .p5-footer-brand .p5-description {
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--p5-text-muted);
+            margin-top: 20px;
+            margin-bottom: 25px;
+            max-width: 290px;
+        }
+
+        .p5-social-icons {
+            display: flex;
             gap: 8px;
         }
 
-        .footer-brand p {
-            color: #a0aec0;
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-            line-height: 1.6;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-btn {
-            width: 38px;
-            height: 38px;
-            background-color: rgba(255, 255, 255, 0.06);
-            border-radius: 8px;
+        .p5-social-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            color: var(--color-white);
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: #ffffff;
             text-decoration: none;
+            font-size: 12px;
+            transition: background-color 0.2s, border-color 0.2s;
         }
 
-        .social-btn:hover {
-            background-color: var(--color-primary);
+        .p5-social-btn:hover {
+            background-color: var(--p5-primary-blue);
+            border-color: var(--p5-primary-blue);
         }
 
-        .footer-heading {
-            font-size: 1rem;
+        .p5-footer-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .p5-footer-title {
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 16px;
+            color: #ffffff;
+            margin-bottom: 25px;
+            position: relative;
         }
 
-        .footer-links-list {
+        .p5-footer-links {
             list-style: none;
         }
 
-        .footer-links-list li {
-            margin-bottom: 10px;
-            font-size: 0.85rem;
-            color: #a0aec0;
-        }
-
-        .footer-form-group {
+        .p5-footer-links li {
             margin-bottom: 12px;
         }
 
-        .footer-control {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            padding: 12px 15px;
-            color: var(--color-white);
-            font-size: 0.9rem;
+        .p5-footer-links a {
+            font-size: 13px;
+            color: var(--p5-text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .footer-control:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .btn-footer-submit {
-            width: 100%;
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            border: none;
-            padding: 12px;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-footer-submit:hover {
-            background-color: #0052cc;
-        }
-
-        .copyright-bar {
-            text-align: center;
-            padding: 20px 16px;
-            font-size: 0.8rem;
-            color: #a0aec0;
-            background-color: #04070d;
-        }
-
-        /* ============================================
-           BOTÃO CÂMERA DE SEGURANÇA FLUTUANTE
-           ============================================ */
-        .camera-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 55px;
-            height: 55px;
-            background-color: var(--color-primary);
-            border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(0, 86, 226, 0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: cameraPulse 2s infinite;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .camera-float:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 6px 30px rgba(0, 86, 226, 0.6);
-            background-color: var(--color-primary-dark);
-        }
-
-        .camera-float i {
+        .p5-footer-links a:hover {
             color: #ffffff;
-            font-size: 24px;
         }
 
-        .camera-tooltip {
-            display: none;
+        .p5-newsletter-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--p5-text-muted);
+            margin-bottom: 20px;
         }
 
-        /* Animação de pulso */
-        @keyframes cameraPulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(0, 86, 226, 0.5);
+        .p5-newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .p5-newsletter-input {
+            width: 100%;
+            background-color: var(--p5-input-bg);
+            border: 1px solid var(--p5-border-color);
+            border-radius: 4px;
+            padding: 14px 16px;
+            color: #ffffff;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .p5-newsletter-input:focus {
+            border-color: var(--p5-primary-blue);
+        }
+
+        .p5-btn-newsletter {
+            background-color: var(--p5-primary-blue);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .p5-btn-newsletter:hover {
+            background-color: #1556c7;
+        }
+
+        .p5-copyright-bar {
+            background-color: #01040a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        .p5-copyright-text {
+            font-size: 12px;
+            color: #52667d;
+        }
+
+        /* ==========================================
+           6. RESPONSIVIDADE INTERMEDIÁRIA UNIFICADA
+           ========================================== */
+        @media (max-width: 1200px) {
+            .p1-top-bar, .p1-main-header, .p1-hero-section, .p5-footer-section, .p5-copyright-bar {
+                padding-left: 5%;
+                padding-right: 5%;
             }
-            50% {
-                box-shadow: 0 0 0 12px rgba(0, 86, 226, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 86, 226, 0);
+            .p1-main-content-wrapper {
+                margin-left: 5%;
+                margin-right: 5%;
             }
         }
 
-        /* ============================================
-           RESPONSIVO - TABLET (768px+)
-           ============================================ */
-        @media (min-width: 768px) {
-            .top-bar {
-                padding: 12px 0;
-                font-size: 0.9rem;
+        @media (max-width: 991px) {
+            .p1-cards-container {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .container {
-                padding: 0 24px;
+            .p1-experience-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
+            .p2-hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .p2-hero-description {
+                margin: 0 auto;
+            }
+            .p2-floating-container {
+                grid-template-columns: 1fr;
+                margin-top: -40px;
+            }
+            .p2-solutions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .p3-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .p4-hero-section {
+                flex-direction: column;
+            }
+            .p4-hero-left-wrapper, .p4-hero-right {
+                width: 100%;
+            }
+            .p4-hero-left-image {
+                height: 320px;
+            }
+            .p4-blue-bar {
+                padding: 25px 40px;
+            }
+            .p4-hero-right {
+                padding: 50px 40px;
+            }
+            .p4-dynamic-content-box, .p4-dynamic-content-box.p4-reverse {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .p4-content-left, .p4-content-right {
+                width: 100%;
+            }
+            .p5-contact-section {
+                justify-content: center;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            .p5-footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
 
-            .mobile-menu-toggle {
+        @media (max-width: 768px) {
+            .p1-top-bar, .p1-main-menu, .p1-search-icon {
                 display: none;
             }
-
-            .nav-menu {
-                display: block;
+            .p1-main-header {
+                padding: 15px 5%;
             }
-
-            .nav-menu ul {
-                display: flex;
-                flex-direction: row;
-                gap: 24px;
+            .p1-hero-section {
+                height: 480px;
             }
-
-            .nav-menu a {
-                padding: 8px 12px;
-                border-radius: 4px;
+            .p1-hero-content h1 {
+                font-size: 28px;
             }
-
-            .nav-menu a:hover {
-                background-color: transparent;
+            .p1-main-content-wrapper {
+                margin: -40px 0 0 0;
+                border-radius: 0;
+                padding: 40px 5%;
             }
-
-            .header-actions {
-                display: flex;
-                align-items: center;
-                gap: 0;
-            }
-
-            .hero-section {
-                padding: 120px 0 160px 0;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-
-            .hero-buttons .btn {
-                width: auto;
-                max-width: none;
-            }
-
-            .hero-curve {
-                height: 60px;
-                border-radius: 30px 30px 0 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grid-2 .about-text-content {
-                order: 1;
-            }
-
-            .grid-2 .about-image-wrapper {
-                order: 2;
-            }
-
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .video-banner-content {
-                padding: 80px 0 140px 0;
-            }
-
-            .dual-tabs-wrapper {
-                flex-direction: row;
-                margin-top: -80px;
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-
-            .tabs-navigation-row {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .tab-nav-btn {
-                width: auto;
-                flex: 1;
-                min-width: 180px;
-            }
-
-            .contact-container {
+            .p1-cards-container {
                 grid-template-columns: 1fr;
-                padding: 50px 24px;
             }
-
-            .contact-title {
-                font-size: 1.75rem;
+            .p2-solutions-grid {
+                grid-template-columns: 1fr;
             }
-
-            .contact-form {
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-            }
-
-            .form-group.full-width {
-                grid-column: span 2;
-            }
-
-            .btn-submit {
-                grid-column: span 2;
-                justify-self: start;
-                max-width: 250px;
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 50px 24px;
-            }
-
-            .newsletter-wrapper {
-                padding: 35px 24px;
-            }
-
-            .newsletter-inner {
-                flex-direction: row;
-                text-align: left;
-                justify-content: space-between;
-            }
-
-            .newsletter-inner > div {
-                flex-direction: row;
-                max-width: 400px;
-            }
-
-            .newsletter-inner > div > button {
-                width: auto;
-                white-space: nowrap;
-            }
-
-            .camera-float {
-                width: 60px;
-                height: 60px;
-                bottom: 25px;
-                right: 25px;
-            }
-
-            .camera-float i {
+            .p2-solutions-main-title, .p3-gallery-section h2, .p3-team-section h2, .p4-cftv-section h2 {
                 font-size: 26px;
             }
-        }
-
-        /* ============================================
-           RESPONSIVO - DESKTOP (1024px+)
-           ============================================ */
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 24px;
-            }
-
-            .hero-section {
-                padding: 140px 0 180px 0;
-                background-position: right center;
-            }
-
-            .hero-title {
-                font-size: 3rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .hero-curve {
-                height: 80px;
-                border-radius: 40px 40px 0 0;
-            }
-
-            .section-title {
-                font-size: 2.25rem;
-            }
-
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .feature-card {
-                padding: 40px 30px;
-            }
-
-            .video-banner-content {
-                padding: 100px 0 160px 0;
-            }
-
-            .dual-tabs-wrapper {
-                margin-top: -80px;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr 1fr;
-                padding: 60px 8%;
-                min-height: 550px;
-            }
-
-            .contact-left {
-                display: flex;
-            }
-
-            .contact-title {
-                font-size: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
-                padding: 60px 8% 40px 8%;
-            }
-
-            .newsletter-wrapper {
-                position: absolute;
-                top: -50px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 84%;
-                max-width: 1100px;
-                border-radius: 6px;
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-                margin-bottom: 0;
-            }
-
-            footer {
-                margin-top: 100px;
-            }
-
-            .camera-tooltip {
-                display: block;
-                position: absolute;
-                right: 75px;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: var(--color-white);
-                color: var(--color-text-dark);
-                padding: 10px 18px;
-                border-radius: 8px;
-                font-size: 0.85rem;
-                font-weight: 600;
-                white-space: nowrap;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                pointer-events: none;
-            }
-
-            .camera-tooltip::after {
-                content: '';
-                position: absolute;
-                right: -6px;
-                top: 50%;
-                transform: translateY(-50%) rotate(45deg);
-                width: 12px;
-                height: 12px;
-                background-color: var(--color-white);
-                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
-            }
-
-            .camera-float:hover .camera-tooltip {
-                opacity: 1;
-                visibility: visible;
-                right: 80px;
-            }
-        }
-
-        /* ============================================
-           RESPONSIVO - DESKTOP GRANDE (1200px+)
-           ============================================ */
-        @media (min-width: 1200px) {
-            .hero-title {
-                font-size: 3.5rem;
-            }
-
-            .hero-content {
-                max-width: 580px;
-                text-align: left;
-            }
-
-            .hero-buttons {
-                justify-content: flex-start;
-            }
-        }
-
-        /* ============================================
-           UTILITÁRIOS
-           ============================================ */
-        @media (max-width: 768px) {
-            .top-bar {
-                padding: 8px 0;
-                font-size: 0.75rem;
-            }
-            
-            .top-bar-container {
+            .p3-hero-inner {
                 flex-direction: column;
-                gap: 8px;
                 text-align: center;
+                gap: 40px;
             }
-            
-            .top-bar-left {
+            .p3-team-grid {
+                grid-template-columns: 1fr;
+                max-width: 290px;
+            }
+            .p3-title-dash-group, .p3-team-decor-line {
                 justify-content: center;
-                gap: 10px;
             }
-            
-            .top-bar-divider {
-                display: none;
+            .p5-contact-form {
+                grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 480px) {
-            .top-bar-left {
-                flex-direction: column;
-                gap: 5px;
+            .p5-form-group.full-width {
+                grid-column: span 1;
             }
-
-            .logo-text {
-                font-size: 1.1rem;
+            .p5-btn-submit {
+                grid-column: span 1;
+                width: 100%;
             }
-
-            .hero-section {
-                padding: 80px 0 120px 0;
+            .p5-form-title {
+                font-size: 26px;
             }
-
-            .hero-title {
-                font-size: 1.65rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .section-tagline {
-                font-size: 0.75rem;
-            }
-
-            .btn {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-
-            .contact-title {
-                font-size: 1.3rem;
-            }
-
-            .newsletter-text {
-                font-size: 1rem;
-            }
-
-            .camera-float {
-                width: 50px;
-                height: 50px;
-                bottom: 16px;
-                right: 16px;
-            }
-
-            .camera-float i {
-                font-size: 22px;
-            }
-
-            @keyframes cameraPulse {
-                0% {
-                    box-shadow: 0 0 0 0 rgba(0, 86, 226, 0.4);
-                }
-                50% {
-                    box-shadow: 0 0 0 10px rgba(0, 86, 226, 0);
-                }
-                100% {
-                    box-shadow: 0 0 0 0 rgba(0, 86, 226, 0);
-                }
-            }
-        }
-
-        /* Prevenção de overflow horizontal */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================
-         TOP BAR - CONTATO E REDES SOCIAIS
-         ============================================ -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <div class="top-bar-left">
-                <a href="tel:17981397628">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Fale conosco (17) 98139-7628</span>
-                </a>
-                <span class="top-bar-divider">|</span>
-                <a href="mailto:contato@vtechriopreto.com.br">
-                    <i class="fas fa-envelope"></i>
-                    <span>contato@vtechriopreto.com.br</span>
-                </a>
+    <div class="p1-top-bar">
+        <div class="p1-top-bar-left">
+            <span>Fale conosco: (17) 98139-7628</span>
+            <span>|</span>
+            <span>contato@vtechriopreto.com.br</span>
+        </div>
+        <div class="p1-top-bar-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-vimeo-v"></i></a>
+        </div>
+    </div>
+
+    <header class="p1-main-header">
+        <div class="p1-logo-container">
+            <img src="logotipo.png" alt="Logotipo VTECH" class="p1-logo-image">
+        </div>
+        <div class="p1-nav-container">
+            <ul class="p1-main-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Soluções</a></li>
+                <li><a href="#">Casos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            <div class="p1-search-icon">
+                <i class="fas fa-search"></i>
             </div>
-            
-            <div class="top-bar-right">
-                <a href="#" class="top-social-link" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="top-social-link" aria-label="X (Twitter)">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="#" class="top-social-link" aria-label="Pinterest">
-                    <i class="fab fa-pinterest-p"></i>
-                </a>
+            <a href="#" class="p1-btn-budget">Orçamento</a>
+        </div>
+    </header>
+
+    <section class="p1-hero-section" id="hero-slider">
+        <a href="#" class="p1-slider-arrow p1-arrow-left" id="slider-prev">&#10094;</a>
+        <div class="p1-hero-content">
+            <h1 id="slider-title">Protegendo o que realmente importa</h1>
+            <p id="slider-desc">Soluções de engenharia de segurança de alta tecnologia adaptadas às suas necessidades residenciais e corporativas corporativas.</p>
+            <a href="#" class="p1-btn-contact-hero">Fale Conosco</a>
+        </div>
+        <a href="#" class="p1-slider-arrow p1-arrow-right" id="slider-next">&#10095;</a>
+    </section>
+
+    <div class="p1-main-content-wrapper">
+        <span class="p1-section-tag">Por que nos escolher</span>
+        <h2 class="p1-section-title">Proteção Inteligente</h2>
+        <div class="p1-blue-indicator">
+            <span class="long"></span>
+            <span class="short"></span>
+        </div>
+
+        <div class="p1-cards-container">
+            <div class="p1-benefit-card">
+                <div class="p1-card-header-box">
+                    <svg class="p1-card-icon" viewBox="0 0 24 24" fill="none" stroke="#0056e2" stroke-width="1.5">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <div class="p1-card-number">01</div>
+                </div>
+                <h3>Segurança Máxima</h3>
+                <p>What is vestibulum arcu a arcu risqu, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p1-benefit-card">
+                <div class="p1-card-header-box">
+                    <svg class="p1-card-icon" viewBox="0 0 24 24" fill="none" stroke="#0056e2" stroke-width="1.5">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <div class="p1-card-number">02</div>
+                </div>
+                <h3>Monitoramento 24h</h3>
+                <p>What is vestibulum arcu a arcu risqu, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p1-benefit-card">
+                <div class="p1-card-header-box">
+                    <svg class="p1-card-icon" viewBox="0 0 24 24" fill="none" stroke="#0056e2" stroke-width="1.5">
+                        <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zM9 7a3 3 0 0 1 6 0v3H9V7z"/>
+                    </svg>
+                    <div class="p1-card-number">03</div>
+                </div>
+                <h3>Controle de Acesso</h3>
+                <p>What is vestibulum arcu a arcu risqu, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+        </div>
+
+        <div class="p1-experience-container">
+            <div class="p1-experience-content">
+                <span class="p1-section-tag">Sobre nós</span>
+                <h2 class="p1-section-title">Experiência<br>e Confiança</h2>
+                <div class="p1-blue-indicator p1-indicator-left">
+                    <span class="long"></span>
+                    <span class="short"></span>
+                </div>
+                <p>We are a leader in endpoint protection solutions by industry analysts, indep endet testing organi- zations and security professionals. orem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                <a href="#" class="p1-btn-more">Saiba mais</a>
+            </div>
+            <div class="p1-experience-image">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Experiência em Segurança">
             </div>
         </div>
     </div>
 
-    <!-- ============================================
-         BOTÃO CÂMERA DE SEGURANÇA FLUTUANTE
-         ============================================ -->
-    <a href="#contato" 
-       class="camera-float" 
-       aria-label="Solicite um orçamento">
-        <i class="fas fa-video"></i>
-        <span class="camera-tooltip">Solicite um orçamento!</span>
-    </a>
+    <section class="p2-hero-section">
+        <div class="p2-hero-container">
+            <div class="p2-hero-video-wrapper">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Câmera Dome de Segurança">
+                <div class="p2-play-button" aria-label="Play Video">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="p2-hero-content">
+                <span class="p2-hero-tag">Sobre nós</span>
+                <h1 class="p2-hero-title">Nossas soluções<br>em segurança</h1>
+                <p class="p2-hero-description">The professional approach to security. Teachings of the great master-builder of human happiness.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- ============================================
-         HEADER
-         ============================================ -->
-    <header class="main-header">
-        <div class="container header-container">
-            <div class="logo" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-                <img src="logotipo.png" alt="Trend Segurança Logo">
-                <span class="logo-text">Trend Segurança</span>
+    <div class="p2-floating-container">
+        <div class="p2-floating-card">
+            <div class="p2-card-left-content">
+                <div class="p2-card-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 class="p2-card-title">Segurança Residencial</h3>
+            </div>
+            <a href="#" class="p2-card-link">Saiba Mais &rarr;</a>
+        </div>
+        <div class="p2-floating-card">
+            <div class="p2-card-left-content">
+                <div class="p2-card-icon-box"><i class="fa-solid fa-building-shield"></i></div>
+                <h3 class="p2-card-title">Segurança Corporativa</h3>
+            </div>
+            <a href="#" class="p2-card-link">Saiba Mais &rarr;</a>
+        </div>
+    </div>
+
+    <section class="p2-solutions-section">
+        <div class="p2-solutions-header">
+            <span class="p2-solutions-tag">O que fazemos</span>
+            <h2 class="p2-solutions-main-title">Soluções Completas de Proteção</h2>
+        </div>
+        <div class="p2-solutions-grid">
+            <div class="p2-solution-box">
+                <div class="p2-solution-icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+                <h3 class="p2-solution-box-title">Cerca elétrica</h3>
+                <p class="p2-solution-box-text">We are vestibulum arcu a arcu risque, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p2-solution-box">
+                <div class="p2-solution-icon-wrapper"><i class="fa-solid fa-lock"></i></div>
+                <h3 class="p2-solution-box-title">Fechadura digital</h3>
+                <p class="p2-solution-box-text">We are vestibulum arcu a arcu risque, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p2-solution-box">
+                <div class="p2-solution-icon-wrapper"><i class="fa-solid fa-network-wired"></i></div>
+                <h3 class="p2-solution-box-title">Interfonia</h3>
+                <p class="p2-solution-box-text">We are vestibulum arcu a arcu risque, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p2-solution-box">
+                <div class="p2-solution-icon-wrapper"><i class="fa-solid fa-video"></i></div>
+                <h3 class="p2-solution-box-title">CFTV</h3>
+                <p class="p2-solution-box-text">We are vestibulum arcu a arcu risque, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p2-solution-box">
+                <div class="p2-solution-icon-wrapper"><i class="fa-solid fa-fingerprint"></i></div>
+                <h3 class="p2-solution-box-title">Alarmes</h3>
+                <p class="p2-solution-box-text">We are vestibulum arcu a arcu risque, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+            <div class="p2-solution-box">
+                <div class="p2-solution-icon-wrapper"><i class="fa-solid fa-id-card-clip"></i></div>
+                <h3 class="p2-solution-box-title">Controle de acesso</h3>
+                <p class="p2-solution-box-text">We are vestibulum arcu a arcu risque, quis dignissim turpis semper onec tor volutpat a iaculis sit amet.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="p3-hero-outer">
+        <div class="p3-hero-inner">
+            <div class="p3-hero-content">
+                <span class="p3-hero-tag">Nossos Casos de Sucesso</span>
+                <h1>Projetos e Soluções<br>Aplicadas com Sucesso</h1>
+                <div class="p3-title-dash-group">
+                    <span class="p3-dash-main"></span>
+                    <span class="p3-dash-dot"></span>
+                    <span class="p3-dash-dot"></span>
+                </div>
+                <p class="p3-hero-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
+            </div>
+            <a href="#" class="p3-btn-saiba-mais">Saiba Mais</a>
+        </div>
+    </div>
+
+    <section class="p3-gallery-section">
+        <span class="p3-gallery-tag">Galeria de fotos</span>
+        <h2>Casos Recentes</h2>
+        <div class="p3-gallery-decor-line">
+            <span class="p3-line-main"></span>
+            <span class="p3-line-dot"></span>
+            <span class="p3-line-dot"></span>
+        </div>
+
+        <div class="p3-gallery-grid">
+            <div class="p3-gallery-item">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Caso 1">
+                <div class="p3-chat-bubble">Tech Security</div>
+            </div>
+            <div class="p3-gallery-item">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Caso 2">
+                <div class="p3-chat-bubble">Smart Monitor</div>
+            </div>
+            <div class="p3-gallery-item">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Caso 3">
+                <div class="p3-chat-bubble">Control Access</div>
+            </div>
+            <div class="p3-gallery-item">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Caso 4">
+                <div class="p3-chat-bubble">Corporate Shield</div>
+            </div>
+        </div>
+
+        <div class="p3-pagination-dots">
+            <span class="p3-dot active"></span>
+            <span class="p3-dot"></span>
+            <span class="p3-dot"></span>
+        </div>
+    </section>
+
+    <section class="p3-team-section">
+        <span class="p3-team-tag">Nossos Especialistas</span>
+        <h2>Membros da Equipe</h2>
+        <div class="p3-team-decor-line">
+            <span class="p3-team-line-main"></span>
+            <span class="p3-team-line-dot"></span>
+            <span class="p3-team-line-dot"></span>
+        </div>
+
+        <div class="p3-team-grid">
+            <div class="p3-team-card">
+                <div class="p3-member-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Peshotan Mehta">
+                </div>
+                <div class="p3-member-info-badge">
+                    <div class="p3-member-name">Peshotan Mehta</div>
+                    <div class="p3-member-role">Suporte</div>
+                </div>
             </div>
 
-            <button class="mobile-menu-toggle" aria-label="Abrir Menu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="p3-team-card">
+                <div class="p3-member-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Tomas Brown">
+                </div>
+                <div class="p3-member-info-badge">
+                    <div class="p3-member-name">Tomas Brown</div>
+                    <div class="p3-member-role">Engenheiro</div>
+                </div>
+            </div>
 
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#sobre">Sobre nós</a></li>
-                    <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#contato">Contato</a></li>
+            <div class="p3-team-card p3-card-overlay-style">
+                <div class="p3-member-photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Peter Fransisco">
+                    <div class="p3-social-media-container">
+                        <a href="#" class="p3-social-btn">f</a>
+                        <a href="#" class="p3-social-btn">X</a>
+                        <a href="#" class="p3-social-btn">P</a>
+                    </div>
+                    <div class="p3-member-info-badge">
+                        <div class="p3-member-name">Peter Fransisco</div>
+                        <div class="p3-member-role">Fundador</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p4-hero-section">
+        <div class="p4-hero-left-wrapper">
+            <div class="p4-hero-left-image"></div>
+            <div class="p4-blue-bar">
+                <div class="p4-blue-bar-content">
+                    <div class="p4-blue-bar-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    </div>
+                    <h3>Melhores Soluções de<br>Segurança Tecnológica</h3>
+                </div>
+                <a href="#" class="p4-btn-white">Serviços</a>
+            </div>
+        </div>
+        <div class="p4-hero-right">
+            <span class="p4-subtitle">O Que Nós Oferecemos</span>
+            <h2>Por que Escolher Nossa<br>Agência de Segurança</h2>
+            <div class="p4-indicator-lines">
+                <span></span><span></span><span></span>
+            </div>
+            <p class="p4-description">Nossos clients incluem indivíduos, frotas comerciais e grandes corporações que buscam mitigar riscos e obter respostas rápidas a incidentes.</p>
+            
+            <div class="p4-feature-item">
+                <div class="p4-feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                </div>
+                <div class="p4-feature-text">
+                    <h3>Integração de Sistemas</h3>
+                    <p>Nossos clientes incluem indivíduos, frotas e empresas que buscam mais proteção.</p>
+                </div>
+            </div>
+
+            <div class="p4-feature-item">
+                <div class="p4-feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                </div>
+                <div class="p4-feature-text">
+                    <h3>Tecnologia e Eficiência</h3>
+                    <p>Nossos clientes incluem indivíduos, frotas e empresas que buscam mais proteção.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p4-cftv-section">
+        <span class="p4-section-tag">Por Que Escolher Nosso Serviço</span>
+        <h2>Gerencie Seu Sistema de CFTV<br>Online Facilmente</h2>
+        <div class="p4-center-line"><span></span><span></span><span></span></div>
+
+        <div class="p4-tabs-container">
+            <div class="p4-tab-item active" id="tab-identificacao">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <span>Identificação de Riscos</span>
+            </div>
+            <div class="p4-tab-item" id="tab-remoto">
+                <svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                <span>Acesso Remoto Rápido</span>
+            </div>
+            <div class="p4-tab-item" id="tab-chaves">
+                <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                <span>Gerenciamento de Chaves</span>
+            </div>
+        </div>
+
+        <div class="p4-dynamic-content-box" id="p4-dynamic-container">
+            <div class="p4-content-left">
+                <h4 id="p4-dyn-subtitle">Suporte de Engenharia</h4>
+                <h3 id="p4-dyn-title">Identificação de Riscos em Tempo Real</h3>
+                <p class="p4-tab-desc" id="p4-dyn-desc">Oferecemos mapeamento completo das vulnerabilidades do perímetro através de algoritmos de monitoramento inteligente estruturado.</p>
+                <ul class="p4-bullets-list" id="p4-dyn-bullets">
+                    <li>Nossa empresa oferece manutenção e reparos automotivos desde 1972.</li>
+                    <li>Sed est nulla, tincidunt ac ex eget, dictum mollis tortor.</li>
                 </ul>
-            </nav>
-
-            <div class="header-actions">
-                <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+                <a href="#" class="p4-btn-blue" id="p4-dyn-btn">Contate Agora</a>
             </div>
-        </div>
-    </header>
-
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Segurança Inteligente para Proteger o que Realmente Importa.</h1>
-                <p class="hero-subtitle">Soluções completas em segurança eletrônica para residências, empresas e condomínios.</p>
-                <div class="hero-buttons">
-                    <a href="#contato" class="btn btn-light">Fale Conosco</a>
-                    <a href="#solucoes" class="btn btn-outline-light">Nossas Soluções</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-curve"></div>
-    </section>
-
-    <!-- ============================================
-         FEATURES - POR QUE ESCOLHER A TREND SEGURANÇA
-         ============================================ -->
-    <section class="features-section" id="vantagens">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tagline">Tecnologia</span>
-                <h2 class="section-title">Por que escolher a Trend Segurança</h2>
-                <div class="accent-line">
-                    <span></span>
-                </div>
-            </div>
-
-            <div class="grid-3">
-                <div class="feature-card">
-                    <div class="card-bg-number">01</div>
-                    <div class="card-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="card-title">Monitoramento 24/7</h3>
-                    <p class="card-text">O que é vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="card-bg-number">02</div>
-                    <div class="card-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3 class="card-title">Tecnologia Avançada</h3>
-                    <p class="card-text">O que é vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="card-bg-number">03</div>
-                    <div class="card-icon">
-                        <i class="fas fa-id-card"></i>
-                    </div>
-                    <h3 class="card-title">Controle de Acesso</h3>
-                    <p class="card-text">O que é vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         ABOUT SECTION
-         ============================================ -->
-    <section class="about-section" id="sobre">
-        <div class="container">
-            <div class="grid-2">
-                <div class="about-text-content">
-                    <span class="section-tagline">Sobre nós</span>
-                    <h2 class="section-title text-left">Experiência e Confiança</h2>
-                    <div class="accent-line text-left">
-                        <span></span>
-                    </div>
-
-                    <p class="highlight-p">We are a leader in endpoint protection solutions by industry analysts, independent testing organizations and security professionals. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
-
-                    <a href="#contato" class="btn btn-primary mt-4">Saiba mais</a>
-                </div>
-                <div class="about-image-wrapper">
-                    <div class="image-border-radius">
-                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Painel de Automação" loading="lazy">
+            <div class="p4-content-right">
+                <div class="p4-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop" alt="Monitoramento CFTV" id="p4-dyn-img">
+                    <div class="p4-video-play-btn" id="p4-play-button">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         VIDEO SECTION
-         ============================================ -->
-    <section class="video-promo-section">
-        <div class="video-banner-content">
-            <div class="container">
-                <div class="grid-2">
-                    <div class="video-wrapper">
-                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" alt="Prévia CFTV" class="video-thumb" loading="lazy">
-                        <button class="play-trigger-btn" aria-label="Assistir Vídeo">
-                            <i class="fas fa-play"></i>
-                        </button>
-                    </div>
-                    <div class="video-text-wrapper">
-                        <span class="section-tagline color-white-op">Sobre nós</span>
-                        <h2 class="section-title text-left text-white">Nossas soluções em segurança</h2>
-                        <div class="accent-line text-left">
-                            <span></span>
-                        </div>
-                        <p class="text-white-op mb-4">The professional approach to security. Teachings of the great master-builder of human happiness.</p>
-                    </div>
+    <section class="p5-contact-section">
+        <div class="p5-form-container">
+            <p class="p5-form-subtitle">Fale Conosco</p>
+            <h2 class="p5-form-title">Preencha o formulário para solicitar um orçamento sem compromisso.</h2>
+            <div class="p5-title-divider"></div>
+            
+            <form class="p5-contact-form" action="#" method="POST">
+                <div class="p5-form-group">
+                    <input type="text" class="p5-form-control" placeholder="Nome*" required>
                 </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="dual-tabs-wrapper">
-                <div class="tab-card-floating">
-                    <div class="tab-icon-blue">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="tab-info">
-                        <h3>CFTV Comercial</h3>
-                        <a href="#solucoes">Ver mais</a>
-                    </div>
+                <div class="p5-form-group">
+                    <input type="email" class="p5-form-control" placeholder="E-mail*" required>
                 </div>
-                <div class="tab-card-floating">
-                    <div class="tab-icon-blue">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="tab-info">
-                        <h3>CFTV Residencial</h3>
-                        <a href="#solucoes">Ver mais</a>
-                    </div>
+                <div class="p5-form-group">
+                    <input type="text" class="p5-form-control" placeholder="Telefone">
                 </div>
-            </div>
+                <div class="p5-form-group">
+                    <input type="text" class="p5-form-control" placeholder="Assunto">
+                </div>
+                <div class="p5-form-group full-width">
+                    <textarea class="p5-form-control" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+                <button type="submit" class="p5-btn-submit">Enviar</button>
+            </form>
         </div>
     </section>
 
-    <!-- ============================================
-         SOLUTIONS SECTION
-         ============================================ -->
-    <section class="industries-section" id="solucoes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tagline">Soluções</span>
-                <h2 class="section-title">Nossas Soluções em Segurança</h2>
-                <div class="accent-line">
-                    <span></span>
+    <div class="p5-white-divider"></div>
+
+    <footer class="p5-footer-section">
+        <div class="p5-footer-container">
+            <div class="p5-footer-brand">
+                <div class="p5-logo-container">
+                    <img src="logotipo.png" alt="Logotipo VTECH" class="p5-logo-img">
+                </div>
+                <p class="p5-description">Soluções completas e inteligentes em segurança eletrônica, cercas elétricas, alarmes e monitoramento de CFTV de alta tecnologia.</p>
+                <div class="p5-social-icons">
+                    <a href="#" class="p5-social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="p5-social-btn"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="p5-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="p5-social-btn"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
-            <div class="grid-3 row-gap-4">
-                <div class="industry-box">
-                    <div class="ind-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Monitoramento</h3>
-                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-                <div class="industry-box">
-                    <div class="ind-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Manutenção</h3>
-                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-                <div class="industry-box">
-                    <div class="ind-icon">
-                        <i class="fas fa-door-open"></i>
-                    </div>
-                    <h3>Portaria remota</h3>
-                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-                <div class="industry-box">
-                    <div class="ind-icon">
-                        <i class="fas fa-tv"></i>
-                    </div>
-                    <h3>CFTV</h3>
-                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-                <div class="industry-box">
-                    <div class="ind-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3>Alarmes</h3>
-                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-                <div class="industry-box">
-                    <div class="ind-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Controle de acesso</h3>
-                    <p>We are vestibulum arcu e arcu risus, quis dignissim turpis semper amet for vestibulum a laculis sit amet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         MANAGEMENT TABS SECTION
-         ============================================ -->
-    <section class="management-tabs-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tagline">Por Que Nos Escolher</span>
-                <h2 class="section-title">Gerencie seu CFTV Online<br>com Facilidade</h2>
-                <div class="accent-line">
-                    <span></span>
-                </div>
-            </div>
-
-            <!-- Botões de Navegação das Tabs -->
-            <div class="tabs-navigation-row">
-                <button class="tab-nav-btn active" data-tab="finger">
-                    <i class="fas fa-fingerprint"></i>
-                    Identificação Digital
-                </button>
-                <button class="tab-nav-btn" data-tab="security">
-                    <i class="fas fa-user-shield"></i>
-                    Solução de Segurança
-                </button>
-                <button class="tab-nav-btn" data-tab="safety">
-                    <i class="fas fa-broadcast-tower"></i>
-                    Segurança CFTV
-                </button>
-            </div>
-
-            <!-- TAB 1: IDENTIFICAÇÃO DIGITAL (COM VÍDEO) -->
-            <div class="tab-content-panel active" id="tab-finger">
-                <div class="grid-2">
-                    <div class="tab-image-pane">
-                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" 
-                             alt="Câmera de Vigilância com Biometria" 
-                             class="image-border-radius" loading="lazy">
-                        <div class="play-button-overlay">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="tab-text-pane">
-                        <h3>Reconhecimento e Identificação</h3>
-                        <p class="body-text">
-                            Tornando-se cada vez mais complexo e desafiador. Nosso serviço supera esses desafios 
-                            combinando tecnologia, inovação e técnicos altamente qualificados para atender às 
-                            necessidades do cliente com total confiança.
-                        </p>
-
-                        <h4>Central de Ajuda 24/7</h4>
-                        <ul class="bullet-blue-list">
-                            <li>Produtos bem estabelecidos para fornecer soluções confiáveis.</li>
-                            <li>Nossa empresa oferece manutenção e reparos desde 1972.</li>
-                            <li>Soluções personalizadas para cada tipo de necessidade.</li>
-                        </ul>
-
-                        <a href="#contato" class="btn btn-primary">Contate Agora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: SOLUÇÃO DE SEGURANÇA (APENAS IMAGEM) -->
-            <div class="tab-content-panel" id="tab-security">
-                <div class="grid-2">
-                    <div class="tab-text-pane">
-                        <h3>Segurança e Proteção Avançada</h3>
-                        <p class="body-text">
-                            Sistemas de segurança completos para proteger seu lar e empresa. 
-                            Monitoramento 24 horas com tecnologia de ponta e equipe especializada 
-                            pronta para atender qualquer emergência.
-                        </p>
-
-                        <h4>Suporte Especializado</h4>
-                        <ul class="bullet-blue-list">
-                            <li>Equipe técnica disponível 24/7 para resolver qualquer incidente.</li>
-                            <li>Proteção avançada contra ameaças e invasão.</li>
-                            <li>Integração completa com outros sistemas de segurança.</li>
-                        </ul>
-
-                        <a href="#contato" class="btn btn-primary">Contate Agora</a>
-                    </div>
-                    <div class="tab-image-pane">
-                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" 
-                             alt="Sistema de Segurança" 
-                             class="image-border-radius" loading="lazy">
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 3: SEGURANÇA CFTV (COM VÍDEO) -->
-            <div class="tab-content-panel" id="tab-safety">
-                <div class="grid-2">
-                    <div class="tab-image-pane">
-                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" 
-                             alt="Segurança de Rede e CFTV" 
-                             class="image-border-radius" loading="lazy">
-                        <div class="play-button-overlay">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="tab-text-pane">
-                        <h3>Segurança de Rede e CFTV</h3>
-                        <p class="body-text">
-                            Proteção avançada para sua infraestrutura digital contra ameaças cibernéticas. 
-                            Monitoramento contínuo de rede com câmeras IP de alta resolução e criptografia.
-                        </p>
-
-                        <h4>Proteção Contra Hackers</h4>
-                        <ul class="bullet-blue-list">
-                            <li>Defesa cibernética avançada para proteger seus dados.</li>
-                            <li>Câmeras IP com criptografia e proteção de dados.</li>
-                            <li>Acesso remoto seguro e com criptografia.</li>
-                        </ul>
-
-                        <a href="#contato" class="btn btn-primary">Contate Agora</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         TEAM SECTION
-         ============================================ -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tagline">Equipe</span>
-                <h2 class="section-title">Nossos Profissionais e Técnicos</h2>
-                <div class="accent-line">
-                    <span></span>
-                </div>
-            </div>
-
-            <div class="grid-3">
-                <div class="team-member-card">
-                    <div class="image-inner">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Especialista em Suporte" loading="lazy">
-                    </div>
-                    <div class="member-meta-box">
-                        <h3>Peshotan Mehta</h3>
-                        <span>Suporte</span>
-                    </div>
-                </div>
-                <div class="team-member-card">
-                    <div class="image-inner">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Engenheiro Especialista" loading="lazy">
-                    </div>
-                    <div class="member-meta-box">
-                        <h3>Tomas Broun</h3>
-                        <span>Engenheiro</span>
-                    </div>
-                </div>
-                <div class="team-member-card">
-                    <div class="image-inner">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Técnico" loading="lazy">
-                    </div>
-                    <div class="member-meta-box">
-                        <h3>Peter Fransisco</h3>
-                        <span>Técnico</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         CONTACT SECTION
-         ============================================ -->
-    <section class="dark-contact-wrapper" id="contato">
-        <div class="contact-container">
-            <div class="contact-left">
-                <div class="vector-overlay"></div>
-                <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" style="position:absolute; left:20px; top:30%;">
-                    <path d="M22 21H2V3h20v18zM2 7l10 7 10-7"/>
-                </svg>
-                <div style="z-index: 5; text-align: center; color: rgba(255,255,255,0.3); border: 1px dashed rgba(255,255,255,0.15); padding: 30px; border-radius: 8px; margin-bottom: 60px; width: 80%;">
-                    <i class="fa-regular fa-image" style="font-size: 2.5rem; margin-bottom: 10px; display:block; color: var(--color-primary);"></i>
-                    [Imagem: Profissional de Segurança]
-                </div>
-            </div>
-
-            <div class="contact-right">
-                <div class="contact-subtitle">Fale Conosco</div>
-                <h2 class="contact-title">Preencha o formulário para solicitar um orçamento sem compromisso.</h2>
-
-                <form class="contact-form" id="mainContactForm" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nome*" required id="formName" autocomplete="name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email*" required id="formEmail" autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" id="formMegaPixel" required>
-                            <option value="" disabled selected>Mega Pixel</option>
-                            <option value="2mp">2 MP</option>
-                            <option value="4mp">4 MP</option>
-                            <option value="8mp">8 MP</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" id="formProduct" required>
-                            <option value="" disabled selected>Selecione o Produto</option>
-                            <option value="p1">Câmera Interna</option>
-                            <option value="p2">Câmera Externa</option>
-                            <option value="p3">Kit Completo</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <textarea class="form-control" placeholder="Sua Mensagem*" required id="formMessage"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Contate-nos</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer>
-        <div class="newsletter-wrapper">
-            <div class="newsletter-inner">
-                <h3 class="newsletter-text">Assine nossa newsletter e<br>receba atualizações</h3>
-                <div>
-                    <input type="email" placeholder="Seu Endereço de E-mail">
-                    <button>Enviar</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="logo">
-                    <i class="fa-solid fa-shield-halved" style="color:var(--color-primary);"></i> Trend Segurança
-                </div>
-                <p>Um resumo mensal das últimas notícias e recursos. Nossa empresa foi criada para tornar sua segurança mais inteligente e acessível.</p>
-                <div class="social-icons">
-                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="social-btn" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="footer-heading">Nossos serviços</h3>
-                <ul class="footer-links-list">
-                    <li>Referal Partners</li>
-                    <li>Space Services</li>
-                    <li>Landlords</li>
-                    <li>Refer a friend</li>
-                    <li>Event planners</li>
+            <div class="p5-footer-col">
+                <h3 class="p5-footer-title">Nossos serviços</h3>
+                <ul class="p5-footer-links">
+                    <li><a href="#">Parceiros de Indicação</a></li>
+                    <li><a href="#">Serviços de Espaço</a></li>
+                    <li><a href="#">Proprietários</a></li>
+                    <li><a href="#">Indique um Amigo</a></li>
+                    <li><a href="#">Organizadores de Eventos</a></li>
                 </ul>
             </div>
 
-            <div>
-                <h3 class="footer-heading">Postagens Recentes</h3>
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 18px;">
-                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=80&q=80" alt="Post 1" style="width: 65px; height: 55px; object-fit: cover; border-radius: 4px;" loading="lazy">
-                    <div>
-                        <h4 style="font-size: 0.85rem; font-weight: 500; color: var(--color-white); margin-bottom: 4px;">Janelas Solares Podem Ser</h4>
-                        <span style="font-size: 0.75rem; color: #a0aec0;">1 de Janeiro de 2021</span>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="footer-heading">Contato rápido</h3>
-                <p style="color:#a0aec0; font-size:0.85rem; margin-bottom:15px;">Sing up now for weekly news and our updates now</p>
-                <form onsubmit="event.preventDefault(); alert('Inscrito com sucesso!');">
-                    <div class="footer-form-group">
-                        <input type="email" class="footer-control" placeholder="Email Address" required>
-                    </div>
-                    <button type="submit" class="btn-footer-submit">Enviar</button>
+            <div class="p5-footer-col">
+                <h3 class="p5-footer-title">Contato rápido</h3>
+                <p class="p5-newsletter-desc">Inscreva-se agora para receber notícias semanais e nossas atualizações</p>
+                <form class="p5-newsletter-form" action="#" method="POST">
+                    <input type="email" class="p5-newsletter-input" placeholder="Endereço de E-mail" required>
+                    <button type="submit" class="p5-btn-newsletter">Enviar</button>
                 </form>
             </div>
         </div>
-        <div class="copyright-bar">&copy; Copyright © Trend Segurança 2024</div>
     </footer>
 
-    <!-- ============================================
-         JAVASCRIPT
-         ============================================ -->
+    <div class="p5-copyright-bar">
+        <p class="p5-copyright-text">Copyright &copy; 2026 VTECH - Segurança de Verdade. Todos os direitos reservados.</p>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             
-            // ============================================
-            // MENU MOBILE
-            // ============================================
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.getElementById('navMenu');
-            const menuIcon = menuToggle.querySelector('i');
-
-            menuToggle.addEventListener('click', function() {
-                const isOpen = navMenu.classList.toggle('open');
-                menuToggle.setAttribute('aria-expanded', isOpen);
-                
-                if (isOpen) {
-                    menuIcon.classList.replace('fa-bars', 'fa-xmark');
-                } else {
-                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            /* --- SLIDER DE CONTEÚDO ROTATIVO (PARTE 1) --- */
+            const slidesData = [
+                {
+                    title: "Protegendo o que realmente importa",
+                    desc: "Soluções de engenharia de segurança de alta tecnologia adaptadas às suas necessidades residenciais e corporativas corporativas.",
+                    url: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop"
+                },
+                {
+                    title: "Tecnologia de Monitoramento Avançada",
+                    desc: "Sistemas integrados com inteligência artificial para detecção de ameaças perimetrais e controle operacional completo.",
+                    url: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop"
                 }
-            });
+            ];
 
-            // Fechar menu ao clicar em um link
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('open');
-                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                });
-            });
+            let currentSlideIndex = 0;
+            const heroSliderSection = document.getElementById('hero-slider');
+            const sliderTitle = document.getElementById('slider-title');
+            const sliderDesc = document.getElementById('slider-desc');
+            const prevArrow = document.getElementById('slider-prev');
+            const nextArrow = document.getElementById('slider-next');
 
-            // Fechar menu ao clicar fora
-            document.addEventListener('click', function(e) {
-                if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                    navMenu.classList.remove('open');
-                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // ============================================
-            // SISTEMA DE TABS INTERATIVAS
-            // ============================================
-            const tabButtons = document.querySelectorAll('.tab-nav-btn');
-            const tabPanels = document.querySelectorAll('.tab-content-panel');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    tabPanels.forEach(panel => panel.classList.remove('active'));
-                    
-                    const tabId = this.getAttribute('data-tab');
-                    const activePanel = document.getElementById('tab-' + tabId);
-                    if (activePanel) {
-                        activePanel.classList.add('active');
-                    }
-                });
-            });
-
-            // ============================================
-            // BOTÕES DE PLAY (VIDEO)
-            // ============================================
-            const playButtons = document.querySelectorAll('.play-button-overlay, .play-trigger-btn');
-            playButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    alert('Vídeo demonstrativo será reproduzido em breve!');
-                });
-            });
-
-            // ============================================
-            // BOTÃO CÂMERA - SCROLL SUAVE PARA CONTATO
-            // ============================================
-            const cameraButton = document.querySelector('.camera-float');
-            if (cameraButton) {
-                cameraButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const contactSection = document.querySelector('#contato');
-                    if (contactSection) {
-                        contactSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+            function applySlide(index) {
+                const data = slidesData[index];
+                heroSliderSection.style.backgroundImage = `url('${data.url}')`;
+                sliderTitle.textContent = data.title;
+                sliderDesc.textContent = data.desc;
             }
 
-            // ============================================
-            // SMOOTH SCROLL PARA LINKS INTERNOS
-            // ============================================
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#') {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const headerOffset = 80;
-                            const elementPosition = target.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
+            prevArrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentSlideIndex = (currentSlideIndex === 0) ? slidesData.length - 1 : currentSlideIndex - 1;
+                applySlide(currentSlideIndex);
             });
 
-            // ============================================
-            // ANIMAÇÃO DE ENTRADA AO SCROLL
-            // ============================================
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+            nextArrow.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentSlideIndex = (currentSlideIndex === slidesData.length - 1) ? 0 : currentSlideIndex + 1;
+                applySlide(currentSlideIndex);
+            });
+
+            // Inicializa primeiro slide do topo
+            applySlide(0);
+
+
+            /* --- MÓDULO INTERATIVO DE CFTV / ABAS DE NAVEGAÇÃO (PARTE 4) --- */
+            const tabData = {
+                'tab-identificacao': {
+                    title: 'Identificação de Riscos em Tempo Real',
+                    desc: 'Oferecemos mapeamento completo das vulnerabilidades do perímetro através de algoritmos de monitoramento inteligente estruturado.',
+                    subtitle: 'Suporte de Engenharia',
+                    bullets: [
+                        'Nossa empresa oferece manutenção e reparos automotivos desde 1972.',
+                        'Sed est nulla, tincidunt ac ex eget, dictum mollis tortor.'
+                    ],
+                    btnText: 'Contate Agora',
+                    isImageLeft: true,
+                    showPlayBtn: true,
+                    imgUrl: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop'
+                },
+                'tab-remoto': {
+                    title: 'Acesso Remoto e Controle na Nuvem',
+                    desc: 'Visualize todas as câmeras de segurança e receba alertas instantâneos diretamente no seu smartphone ou tablet, onde quer que você esteja.',
+                    subtitle: 'Conectividade Total',
+                    bullets: [
+                        'Streaming de alta definição com baixíssima latência ponto a ponto.',
+                        'Aplicativo exclusivo compatível com sistemas Android e iOS.'
+                    ],
+                    btnText: 'Ver Demonstração',
+                    isImageLeft: false, 
+                    showPlayBtn: false,
+                    imgUrl: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop'
+                },
+                'tab-chaves': {
+                    title: 'Gerenciamento de Acesso Seguro',
+                    desc: 'Simplifique o controle de entrada e saída com chaves de acesso criptografadas e digitais. Nossa tecnologia inovadora mitiga falhas humanas.',
+                    subtitle: 'Suporte Técnico Exclusivo',
+                    bullets: [
+                        'Sistemas integrados de chaves inteligentes com nuvem estável.',
+                        'Soluções modulares adaptáveis a pequenas e grandes estruturas.'
+                    ],
+                    btnText: 'Contate Agora',
+                    isImageLeft: true,
+                    showPlayBtn: true,
+                    imgUrl: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1920&auto=format&fit=crop'
+                }
             };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
+            const tabs = document.querySelectorAll('.p4-tab-item');
+            const dynamicContainer = document.getElementById('p4-dynamic-container');
+            const titleEl = document.getElementById('p4-dyn-title');
+            const descEl = document.getElementById('p4-dyn-desc');
+            const subtitleEl = document.getElementById('p4-dyn-subtitle');
+            const btnEl = document.getElementById('p4-dyn-btn');
+            const bulletsEl = document.getElementById('p4-dyn-bullets');
+            const imgEl = document.getElementById('p4-dyn-img');
+            const playBtnEl = document.getElementById('p4-play-button');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const data = tabData[tab.id];
+                    dynamicContainer.style.opacity = 0.2; // Transição suave de fade
+
+                    setTimeout(() => {
+                        titleEl.textContent = data.title;
+                        descEl.textContent = data.desc;
+                        subtitleEl.textContent = data.subtitle;
+                        btnEl.textContent = data.btnText;
+                        imgEl.src = data.imgUrl;
+
+                        bulletsEl.innerHTML = '';
+                        data.bullets.forEach(text => {
+                            const li = document.createElement('li');
+                            li.textContent = text;
+                            bulletsEl.appendChild(li);
+                        });
+
+                        // Gerenciamento geométrico estrutural (Inversão de imagem/texto)
+                        if (data.isImageLeft) {
+                            dynamicContainer.classList.remove('p4-reverse');
+                        } else {
+                            dynamicContainer.classList.add('p4-reverse');
+                        }
+
+                        // Visibilidade condicional do botão de play
+                        playBtnEl.style.display = data.showPlayBtn ? 'flex' : 'none';
+
+                        dynamicContainer.style.opacity = 1;
+                    }, 150);
                 });
-            }, observerOptions);
-
-            document.querySelectorAll('.feature-card, .industry-box, .team-member-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
             });
+
         });
-
-        // ============================================
-        // ENVIO DO FORMULÁRIO
-        // ============================================
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-            document.getElementById('mainContactForm').reset();
-        }
     </script>
-
 </body>
 </html>
